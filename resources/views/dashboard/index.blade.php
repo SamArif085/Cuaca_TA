@@ -40,22 +40,25 @@
                 <i class="fas fa-times"></i>
             </div>
             <div class="mt-2 p-4 text-center">
-                <h6 class="mb-0">Your feedback help us to improve.</h6>
-                <small class="px-3">Please let us know about your chat experience.</small>
-                <div class="d-flex flex-row justify-content-center mt-2">
-                    <img src="https://img.icons8.com/emoji/48/000000/angry-face-emoji--v2.png" />
-                    <img src="https://img.icons8.com/fluent/48/000000/sad.png" />
-                    <img src="https://img.icons8.com/color/48/000000/happy.png" />
-                    <img src="https://img.icons8.com/emoji/48/000000/smiling-face.png" />
-                    <img src="https://img.icons8.com/color/48/000000/lol.png" />
+                <h6 class="mb-0">Apakah Ramalah Hari Ini Sudah Akurat?</h6>
+                <small class="px-3">Berikan Ulasan</small>
+                <div class="d-flex flex-row justify-content-center mt-2 g-2 row">
+                    <div class="col">
+                        <input type="radio" class="btn-check" name="options" id="option1" autocomplete="off" checked>
+                        <label class="btn btn-success" for="option1">Akurat</label>
+                    </div>
+                    <div class="col">
+                        <input type="radio" class="btn-check" name="options" id="option2" autocomplete="off">
+                        <label class="btn btn-danger" for="option2">Tidak</label>
+                    </div>
                 </div>
                 <div class="form-group mt-4">
                     <textarea class="form-control" rows="4" placeholder="Message"></textarea>
                 </div>
                 <div class="mt-2">
-                    <button type="button" class="btn btn-primary btn-block"><span>Send feedback</span></button>
+                    <button type="button" class="btn btn-primary btn-block"><span>Send</span></button>
                 </div>
-                <p class="mt-3">Continue without sending feedback</p>
+                <p class="mt-3">Developer Tim</p>
             </div>
         </div>
     </div>
@@ -134,27 +137,7 @@
     </div>
 
 
-    {{-- <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>
 
-    <!-- Modal -->
-    <div class="modal fade" id="myModal" role="dialog">
-        <div class="modal-dialog">
-
-            <!-- Modal content-->
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">Modal Header</h4>
-                </div>
-                <div class="modal-body">
-                    <p>Some text in the modal.</p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                </div>
-            </div>
-
-        </div> --}}
     </div>
 
 
