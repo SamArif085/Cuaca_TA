@@ -13,12 +13,23 @@
             </div>
         </div>
     </div>
+
+    <select class="form-select form-select-sm" aria-label=".form-select-sm example">
+        <option selected>Open this select menu</option>
+        @foreach ($kota as $kota)
+            <option value="{{ $kota->id }}">{{ $kota->nama_daerah }}</option>
+        @endforeach
+    </select>
+    <select class="form-select form-select-sm" aria-label=".form-select-sm example">
+        <option selected>Open this select menu</option>
+        <option value="1">One</option>
+        <option value="2">Two</option>
+        <option value="3">Three</option>
+    </select>
     <div class="col p-5 mb-4 bg-light rounded-3">
         <div class="container-fluid py-5">
             <h1 class="display-5 fw-bold">Prediksi Cuaca Hari Ini</h1>
-            <p class="col-md-8 fs-4">Using a series of utilities, you can create this jumbotron, just like the one in
-                previous versions of Bootstrap. Check out the examples below for how you can remix and restyle it to your
-                liking.</p>
+            <p class="col-md-8 fs-4 result"></p>
             {{-- <button class="btn btn-primary btn-lg" type="button">Example button</button> --}}
         </div>
     </div>
