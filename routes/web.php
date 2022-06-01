@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\KotaController;
 use App\Http\Controllers\LoginControler;
+use App\Http\Controllers\ProvinsiController;
 use App\Http\Controllers\RegistrasiControler;
 use Illuminate\Support\Facades\Route;
 
@@ -34,3 +36,5 @@ Route::post('/register', [RegistrasiControler::class, 'store']);
 Route::get('/dashboard', function () {
     return view('dashboard.index');
 })->middleware('auth');
+
+Route::get('/dashboard', [ProvinsiController::class, 'index'])->middleware('auth');

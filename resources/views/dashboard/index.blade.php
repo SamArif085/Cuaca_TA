@@ -14,18 +14,24 @@
         </div>
     </div>
 
-    <select class="form-select form-select-sm" aria-label=".form-select-sm example">
+    <select class="form-select form-select-sm input-keyword " aria-label=".form-select-sm example">
         <option selected>Open this select menu</option>
-        @foreach ($kota as $kota)
-            <option value="{{ $kota->id }}">{{ $kota->nama_daerah }}</option>
+        @foreach ($Provinsi as $p)
+            <option value="{{ $p->nama_provinsi }}">{{ $p->nama_provinsi }}</option>
         @endforeach
     </select>
-    <select class="form-select form-select-sm" aria-label=".form-select-sm example">
+
+    <select class="form-select form-select-sm input-keyword2" aria-label=".form-select-sm example">
         <option selected>Open this select menu</option>
-        <option value="1">One</option>
-        <option value="2">Two</option>
-        <option value="3">Three</option>
+        @php
+            $Kota = DB::table('kota')->get();
+        @endphp
+
+        @foreach ($Kota as $k)
+            <option value="{{ $k->nama_daerah }}">{{ $k->nama_daerah }}</option>
+        @endforeach
     </select>
+    <button id="button-addon2" type="button" class="btn">Kirim</button>
     <div class="col p-5 mb-4 bg-light rounded-3">
         <div class="container-fluid py-5">
             <h1 class="display-5 fw-bold">Prediksi Cuaca Hari Ini</h1>
