@@ -2,14 +2,14 @@
 @section('container')
     <div class=" container mr-3 ">
         <div class="row p-md-5 p-sm-5 ">
-            <div class="col-2 bg-primary text-white p-3">
-                Halo {{ auth()->user()->name }}
+            <div class="col-2 bg-primary text-white p-2">
+                <h5>Halo {{ auth()->user()->name }}</h5>
             </div>
-            <div class="col bg-dark text-white p-3">
-                Cuaca Hari Ini :
+            <div class="col bg-dark text-white p-2 result2">
+
             </div>
-            <div class="col-2 bg-info text-white p-3">
-                Potensi Badai:
+            <div class="col-2 bg-info text-white p-2">
+                <h5> Potensi Badai:</h5>
             </div>
         </div>
     </div>
@@ -34,7 +34,7 @@
     <button id="button-addon2" type="button" class="btn">Kirim</button>
     <div class="col p-5 mb-4 bg-light rounded-3">
         <div class="container-fluid py-5">
-            <h1 class="display-5 fw-bold">Prediksi Cuaca Hari Ini</h1>
+            <h1 class="display-5 fw-bold">Cuaca Hari Ini</h1>
             <p class="col-md-8 fs-4 result"></p>
             {{-- <button class="btn btn-primary btn-lg" type="button">Example button</button> --}}
         </div>
@@ -42,10 +42,7 @@
     <div class="col p-5 mb-4 bg-light rounded-3">
         <div class="container-fluid py-5">
             <h1 class="display-5 fw-bold">Prediksi Cuaca Kedepan</h1>
-            <p class="col-md-8 fs-4">Using a series of utilities, you can create this jumbotron, just like the one in
-                previous versions of Bootstrap. Check out the examples below for how you can remix and restyle it to
-                your
-                liking.</p>
+            <p class="col-md-8 fs-4 result3"></p>
             {{-- <button class="btn btn-primary btn-lg" type="button">Example button</button> --}}
         </div>
     </div>
