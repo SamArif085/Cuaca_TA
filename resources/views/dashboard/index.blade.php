@@ -2,36 +2,45 @@
 @section('container')
     <div class=" container mr-3 ">
         <div class="row p-md-5 p-sm-5 ">
-            <div class="col-2 bg-primary text-white p-2">
+            <div class="col-3 bg-primary text-white p-2">
                 <h5>Halo {{ auth()->user()->name }}</h5>
             </div>
             <div class="col bg-dark text-white p-2 result2">
 
             </div>
-            <div class="col-2 bg-info text-white p-2">
+            <div class="col-3 bg-primary text-white p-2 result4">
                 <h5> Potensi Badai:</h5>
             </div>
         </div>
     </div>
+    <div class=" container-fluid">
+        <div class=" row p-md-5 p-sm-5">
+            <div class="col-2">
+                <select class="form-select form-select-sm input-keyword">
+                    <option selected>Open this select menu</option>
+                    @foreach ($Provinsi as $p)
+                        <option {{ old('provinsi') }} value="{{ $p->nama_provinsi }}">{{ $p->nama_provinsi }}</option>
+                    @endforeach
+                </select>
+            </div>
+            <div class="col-2">
+                <select class="form-select form-select-sm input-keyword2">
+                    <option selected>Open this select menu</option>
+                    @php
+                        $Kota = DB::table('kota')->get();
+                    @endphp
 
-    <select class="form-select form-select-sm input-keyword " aria-label=".form-select-sm example">
-        <option selected>Open this select menu</option>
-        @foreach ($Provinsi as $p)
-            <option value="{{ $p->nama_provinsi }}">{{ $p->nama_provinsi }}</option>
-        @endforeach
-    </select>
-
-    <select class="form-select form-select-sm input-keyword2" aria-label=".form-select-sm example">
-        <option selected>Open this select menu</option>
-        @php
-            $Kota = DB::table('kota')->get();
-        @endphp
-
-        @foreach ($Kota as $k)
-            <option value="{{ $k->nama_daerah }}">{{ $k->nama_daerah }}</option>
-        @endforeach
-    </select>
-    <button id="button-addon2" type="button" class="btn">Kirim</button>
+                    @foreach ($Kota as $k)
+                        <option value="{{ $k->nama_daerah }}">{{ $k->nama_daerah }}</option>
+                    @endforeach
+                </select>
+            </div>
+            <div class="col-1">
+                <button id="button-addon2" type="button" class="btn btn-primary"><span
+                        data-feather="search"></span></button>
+            </div>
+        </div>
+    </div>
     <div class="col p-5 mb-4 bg-light rounded-3">
         <div class="container-fluid py-5">
             <h1 class="display-5 fw-bold">Cuaca Hari Ini</h1>
