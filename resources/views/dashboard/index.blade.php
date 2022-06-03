@@ -19,7 +19,7 @@
                 <select class="form-select form-select-sm input-keyword">
                     <option selected>Open this select menu</option>
                     @foreach ($Provinsi as $p)
-                        <option {{ old('provinsi') }} value="{{ $p->nama_provinsi }}">{{ $p->nama_provinsi }}</option>
+                        <option value="{{ $p->nama_provinsi }}">{{ $p->nama_provinsi }}</option>
                     @endforeach
                 </select>
             </div>
