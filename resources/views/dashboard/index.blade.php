@@ -17,7 +17,7 @@
         <div class=" row p-md-5 p-sm-5">
             <div class="col-2">
                 <select class="form-select form-select-sm input-keyword">
-                    <option selected>Open this select menu</option>
+                    <option selected id="Provinsi">Open this select menu</option>
                     @foreach ($Provinsi as $p)
                         <option value="{{ $p->nama_provinsi }}">{{ $p->nama_provinsi }}</option>
                     @endforeach

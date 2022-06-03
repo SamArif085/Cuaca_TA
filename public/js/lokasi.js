@@ -2,7 +2,12 @@ const searchButton = document.querySelector('#button-addon2');
 const inputKeyword = document.querySelector('.input-keyword');
 const inputKeyword2 = document.querySelector('.input-keyword2');
 
-
+$(function () {
+    $('#Provinsi').on('change', function () {
+        let nama_provinsi = $('#Provinsi').val();
+        console.log(nama_provinsi);
+    })
+})
 
 
 searchButton.addEventListener('click', function () {
@@ -35,7 +40,7 @@ searchButton.addEventListener('click', function () {
 
 
 
-                        
+
             var badai = response.data.params[5].times[0].celcius;
 
             if (badai > 28) {

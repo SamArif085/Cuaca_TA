@@ -17,7 +17,6 @@ class ProvinsiController extends Controller
     public function index()
     {
         $Provinsi = ProvinsiModel::all();
-        // $Kota = KotaModel::all();
         return view('dashboard.index', compact('Provinsi'));
     } 
 
