@@ -38,3 +38,4 @@ Route::get('/dashboard', function () {
 })->middleware('auth');
 
 Route::get('/dashboard', [ProvinsiController::class, 'index'])->middleware('auth');
+route::get('/getkota', [KotaController::class, 'getkota']);

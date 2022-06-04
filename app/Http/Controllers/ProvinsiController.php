@@ -18,7 +18,11 @@ class ProvinsiController extends Controller
     {
         $Provinsi = ProvinsiModel::all();
         return view('dashboard.index', compact('Provinsi'));
+
+      
     } 
+
+     
 
     /**
      * Show the form for creating a new resource.

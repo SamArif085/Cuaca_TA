@@ -5,7 +5,14 @@ const inputKeyword2 = document.querySelector('.input-keyword2');
 $(function () {
     $('#Provinsi').on('change', function () {
         let nama_provinsi = $('#Provinsi').val();
-        console.log(nama_provinsi);
+        $.ajax({
+            url: '{{route("getkota")}}',
+            type: 'GET',
+            data: { nama_provinsi: nama_provinsi },
+            success: function (data) {
+                $('#Kota').html(data);
+            }
+        })
     })
 })
 

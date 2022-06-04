@@ -16,14 +16,19 @@
     <div class=" container-fluid">
         <div class=" row p-md-5 p-sm-5">
             <div class="col-2">
-                <select class="form-select form-select-sm input-keyword">
-                    <option selected id="Provinsi">Open this select menu</option>
+                <select class="form-select form-select-sm input-keyword" id="Provinsi">
+                    <option selected>Open this select menu</option>
                     @foreach ($Provinsi as $p)
                         <option value="{{ $p->nama_provinsi }}">{{ $p->nama_provinsi }}</option>
                     @endforeach
                 </select>
             </div>
             <div class="col-2">
+                <select class="form-select form-select-sm input-keyword2" id="Kota">
+                    <option selected>Open this select menu</option>
+                </select>
+            </div>
+            {{-- <div class="col-2">
                 <select class="form-select form-select-sm input-keyword2">
                     <option selected>Open this select menu</option>
                     @php
@@ -34,7 +39,7 @@
                         <option value="{{ $k->nama_daerah }}">{{ $k->nama_daerah }}</option>
                     @endforeach
                 </select>
-            </div>
+            </div> --}}
             <div class="col-1">
                 <button id="button-addon2" type="button" class="btn btn-primary"><span
                         data-feather="search"></span></button>
