@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\KotaModel;
 use Illuminate\Http\Request;
 use App\Models\ProvinsiModel;
+use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 
 class ProvinsiController extends Controller
@@ -16,7 +17,7 @@ class ProvinsiController extends Controller
      */
     public function index()
     {
-        $Provinsi = ProvinsiModel::all();
+        $Provinsi['data'] = ProvinsiModel::orderby('nama_provinsi', 'asc')->get();
         return view('dashboard.index', compact('Provinsi'));
 
       
@@ -24,6 +25,17 @@ class ProvinsiController extends Controller
 
      
 
+public function Kota($kotaid =0)
+{
+    // $isikota['data']=KotaModel::orderby('nama_daerah','asc')->select('id_provinsi','nama_daerah')->where('id_provinsi',$kotaid)->get();
+
+    $isikota['data'] = DB::table('provinsi')
+            ->join('kota', 'provinsi.id', '=', 'kota.id_provinsi')->where('nama_provinsi',$kotaid)->get();
+
+   
+  
+    return response()->json($isikota);
+}
     /**
      * Show the form for creating a new resource.
      *

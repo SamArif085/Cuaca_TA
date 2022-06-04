@@ -17,15 +17,15 @@
         <div class=" row p-md-5 p-sm-5">
             <div class="col-2">
                 <select class="form-select form-select-sm input-keyword" id="Provinsi">
-                    <option selected>Open this select menu</option>
-                    @foreach ($Provinsi as $p)
+                    <option value="0" selected>Open this select menu</option>
+                    @foreach ($Provinsi['data'] as $p)
                         <option value="{{ $p->nama_provinsi }}">{{ $p->nama_provinsi }}</option>
                     @endforeach
                 </select>
             </div>
             <div class="col-2">
-                <select class="form-select form-select-sm input-keyword2" id="Kota">
-                    <option selected>Open this select menu</option>
+                <select class="form-select form-select-sm input-keyword2" name="nama_provinsi" id="kota">
+                    <option value='0' selected>Open this select menu</option>
                 </select>
             </div>
             {{-- <div class="col-2">
@@ -171,4 +171,100 @@
 
 
     </div>
+@endsection
+
+@section('scripts')
+    <script type='text/javascript'>
+        // const searchButton = document.querySelector('#button-addon2');
+        // const inputKeyword = document.querySelector('.input-keyword');
+        // const inputKeyword2 = document.querySelector('.input-keyword2');
+
+        $(document).ready(function() {
+            $('#Provinsi').on('change', function() {
+                var id = $(this).val();
+                $('#kota').find('option').not(':first').remove();
+                $.ajax({
+                    url: '/get-kota/' + id,
+                    type: 'GET',
+                    dataType: 'json',
+                    success: function(response) {
+
+
+                        var len = 0;
+                        if (response['data'].length > 0) {
+                            len = response['data'].length;
+                        }
+                        if (len > 0) {
+                            for (var i = 0; i < len; i++) {
+                                var id = response['data'][i].nama_daerah;
+                                var name = response['data'][i].nama_daerah;
+                                var option = "<option value='" + id + "'>" + name +
+                                    "</option>";
+                                $('#kota').append(option);
+
+                            }
+                        }
+                    }
+                });
+            }); // $.ajax({
+            //     url: '{{ url('/getkota') }}',
+            //     type: 'GET',
+            //     data: {
+            //         nama_provinsi: nama_provinsi
+            //     },
+            //     success: function(data) {
+            //         $('#Kota').html(data);
+            //     }
+            // })
+
+        })
+
+
+        // searchButton.addEventListener('click', function() {
+
+        //     fetch("https://cuaca-gempa-rest-api.vercel.app/weather/" + inputKeyword.value + "/" + inputKeyword2
+        //             .value)
+        //         .then(response => response.json())
+        //         .then(response => {
+        //             let result = document.querySelector('.result')
+
+        //             result.innerHTML = `<h2 style="margin-bottom: 15px;">${response.data.description}, ${response.data.domain}</h2>
+    //                         <h5><span> Temperature : ${response.data.params[5].times[0].celcius}</span></h5>
+    //                          <h5><span> Kecepatan Angin : ${response.data.params[8].times[0].kph} km/jam</span></h5>
+    //                          <h5> Kelembapan : ${response.data.params[0].times[0].value}</h5>`
+        //             let result2 = document.querySelector('.result2')
+
+        //             result2.innerHTML = `<h5> Cuaca Hari Ini : ${response.data.params[6].times[0].name}</h5>`
+
+        //             let result3 = document.querySelector('.result3')
+
+        //             result3.innerHTML = `<h2 style="margin-bottom: 15px;">${response.data.description}, ${response.data.domain}</h2>
+    //                         <h5><span> Prediksi Besok </span></h5>
+    //                         <h5><span> Temperature : ${response.data.params[5].times[4].celcius}</span></h5>
+    //                         <h5><span> Kecepatan Angin : ${response.data.params[8].times[4].kph} km/jam</span></h5>
+    //                         <h5> Cuaca Hari Ini : ${response.data.params[6].times[4].name}</h5>
+    //                         <br>
+    //                         <h5><span> Prediksi Lusa </span></h5>
+    //                         <h5><span> Temperature : ${response.data.params[5].times[8].celcius}</span></h5>
+    //                         <h5><span> Kecepatan Angin : ${response.data.params[8].times[8].kph} km/jam</span></h5>
+    //                         <h5> Cuaca Hari Ini : ${response.data.params[6].times[8].name}</h5>`
+
+
+
+
+        //             var badai = response.data.params[5].times[0].celcius;
+
+        //             if (badai > 28) {
+        //                 let badai = document.querySelector('.result4')
+        //                 badai.innerHTML = `<h5> Potensi Badai :  Waspada </h5>`
+        //             } else {
+        //                 let badai = document.querySelector('.result4')
+        //                 badai.innerHTML = `<h5> Potensi Badai : Tidak Ada </h5>`
+        //             }
+
+        //         })
+        //     inputKeyword.value = null;
+
+        // })
+    </script>
 @endsection

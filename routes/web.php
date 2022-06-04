@@ -33,9 +33,9 @@ Route::post('/logout', [LoginControler::class, 'logout']);
 Route::get('/register', [RegistrasiControler::class, 'index']);
 Route::post('/register', [RegistrasiControler::class, 'store']);
 
-Route::get('/dashboard', function () {
-    return view('dashboard.index');
-})->middleware('auth');
+// Route::get('/dashboard', function () {
+//     return view('dashboard.index');
+// })->middleware('auth');
 
 Route::get('/dashboard', [ProvinsiController::class, 'index'])->middleware('auth');
-route::get('/getkota', [KotaController::class, 'getkota']);
+Route::get('/get-kota/{id}', [ProvinsiController::class, 'Kota'])->middleware('auth');

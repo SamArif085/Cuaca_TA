@@ -2,19 +2,19 @@ const searchButton = document.querySelector('#button-addon2');
 const inputKeyword = document.querySelector('.input-keyword');
 const inputKeyword2 = document.querySelector('.input-keyword2');
 
-$(function () {
-    $('#Provinsi').on('change', function () {
-        let nama_provinsi = $('#Provinsi').val();
-        $.ajax({
-            url: '{{route("getkota")}}',
-            type: 'GET',
-            data: { nama_provinsi: nama_provinsi },
-            success: function (data) {
-                $('#Kota').html(data);
-            }
-        })
-    })
-})
+// $(function () {
+//     $('#Provinsi').on('change', function () {
+//         let nama_provinsi = $('#Provinsi').val();
+//         $.ajax({
+//             url: '{{url("/getkota")}}',
+//             type: 'GET',
+//             data: { nama_provinsi: nama_provinsi },
+//             success: function (data) {
+//                 $('#Kota').html(data);
+//             }
+//         })
+//     })
+// })
 
 
 searchButton.addEventListener('click', function () {
