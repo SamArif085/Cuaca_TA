@@ -7,6 +7,7 @@
             </div>
             <div class="col bg-dark text-white p-2 result2">
 
+
             </div>
             <div class="col-3 bg-primary text-white p-2 result4">
                 <h5> Potensi Badai:</h5>

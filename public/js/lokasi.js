@@ -30,7 +30,40 @@ searchButton.addEventListener('click', function () {
                                  <h5> Kelembapan : ${response.data.params[0].times[0].value}</h5>`
             let result2 = document.querySelector('.result2')
 
-            result2.innerHTML = `<h5> Cuaca Hari Ini : ${response.data.params[6].times[0].name}</h5>`
+            var cuaca = response.data.params[6].times[0].code;
+
+            if (cuaca == 3) {
+                result2.innerHTML = `<h5> Cuaca Hari Ini :  <i class="wi wi-cloudy"></i> Berawan </h5>`
+            } else if (cuaca == 0) {
+                result2.innerHTML = `<h5> Cuaca Hari Ini :  <i class="wi wi-day-sunny"></i> Cerah </h5>`
+            } else if (cuaca == 1) {
+                result2.innerHTML = `<h5> Cuaca Hari Ini :  <i class="wi wi-day-cloudy"></i> Cerah Berawan</h5>`
+            } else if (cuaca == 2) {
+                result2.innerHTML = `<h5> Cuaca Hari Ini :  <i class="wi wi-day-cloudy"></i> Cerah Berawan</h5>`
+            } else if (cuaca == 4) {
+                result2.innerHTML = `<h5> Cuaca Hari Ini :  <i class="wi wi-day-sunny-overcast"></i> Berawan Tebal</h5>`
+            } else if (cuaca == 5) {
+                result2.innerHTML = `<h5> Cuaca Hari Ini :  <i class="wi wi-day-haze"></i> Udara Kabur</h5>`
+            } else if (cuaca == 10) {
+                result2.innerHTML = `<h5> Cuaca Hari Ini :  <i class="wi wi-day-fog"></i> Asap </h5>`
+            } else if (cuaca == 45) {
+                result2.innerHTML = `<h5> Cuaca Hari Ini :  <i class="wi wi-day-fog"></i> Kabut</h5>`
+            } else if (cuaca == 60) {
+                result2.innerHTML = `<h5> Cuaca Hari Ini :  <i class="wi wi-day-showers"></i> Hujan Ringan</h5>`
+            } else if (cuaca == 61) {
+                result2.innerHTML = `<h5> Cuaca Hari Ini :  <i class="wi wi-day-rain"></i> Hujan Sedang</h5>`
+            } else if (cuaca == 63) {
+                result2.innerHTML = `<h5> Cuaca Hari Ini :  <i class="wi wi-night-sleet-storm"></i> Hujan Lebat</h5>`
+            } else if (cuaca == 80) {
+                result2.innerHTML = `<h5> Cuaca Hari Ini :  <i class="wi wi-night-showers"></i> Hujan Lokal </h5>`
+            } else if (cuaca == 95) {
+                result2.innerHTML = `<h5> Cuaca Hari Ini :  <i class="wi wi-night-snow-thunderstorm"></i> Hujan Petir</h5>`
+            } else if (cuaca == 97) {
+                result2.innerHTML = `<h5> Cuaca Hari Ini :  <i class="wi wi-night-snow-thunderstorm"></i> Hujan Petir</h5>`
+            }
+
+
+            // result2.innerHTML = `<h5> Cuaca Hari Ini : ${response.data.params[6].times[0].name}</h5>`
 
             let result3 = document.querySelector('.result3')
 
@@ -44,9 +77,6 @@ searchButton.addEventListener('click', function () {
                                 <h5><span> Temperature : ${response.data.params[5].times[8].celcius}</span></h5>
                                 <h5><span> Kecepatan Angin : ${response.data.params[8].times[8].kph} km/jam</span></h5>
                                 <h5> Cuaca Hari Ini : ${response.data.params[6].times[8].name}</h5>`
-
-
-
 
             var badai = response.data.params[5].times[0].celcius;
 
