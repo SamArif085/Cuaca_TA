@@ -8,7 +8,7 @@
                  </a>
              </li>
              <li class="nav-item">
-                 <a class="nav-link" href="/dashboard/post">
+                 <a class="nav-link" href="/dashboard/gempa">
                      <span data-feather="file-text"></span>
                      Gempa
                  </a>

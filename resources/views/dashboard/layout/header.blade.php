@@ -48,7 +48,7 @@
 </header> --}}
 <header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
     <div class=" container-fluid position-relative ">
-        <img src="img/logo2.png" class="rounded " alt="..." width="150" height="auto">
+        <img src="{{ asset('img/logo2.png') }}" class="rounded " alt="..." width="150" height="auto">
     </div>
 
     <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse"

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\GempaController;
 use App\Http\Controllers\KotaController;
 use App\Http\Controllers\LoginControler;
 use App\Http\Controllers\ProvinsiController;
@@ -38,4 +39,5 @@ Route::post('/register', [RegistrasiControler::class, 'store']);
 // })->middleware('auth');
 
 Route::get('/dashboard', [ProvinsiController::class, 'index'])->middleware('auth');
+Route::get('/dashboard/gempa', [GempaController::class, 'index'])->middleware('auth');
 Route::get('/get-kota/{id}', [ProvinsiController::class, 'Kota'])->middleware('auth');
