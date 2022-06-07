@@ -5,6 +5,7 @@ use App\Http\Controllers\KotaController;
 use App\Http\Controllers\LoginControler;
 use App\Http\Controllers\ProvinsiController;
 use App\Http\Controllers\RegistrasiControler;
+use App\Http\Controllers\UlasanModelController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -41,3 +42,6 @@ Route::post('/register', [RegistrasiControler::class, 'store']);
 Route::get('/dashboard', [ProvinsiController::class, 'index'])->middleware('auth');
 Route::get('/dashboard/gempa', [GempaController::class, 'index'])->middleware('auth');
 Route::get('/get-kota/{id}', [ProvinsiController::class, 'Kota'])->middleware('auth');
+
+//tambahdata
+Route::post('/dashboard',[UlasanModelController::class, 'store']);

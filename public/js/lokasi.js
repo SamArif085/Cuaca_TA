@@ -43,6 +43,8 @@ searchButton.addEventListener('click', function () {
                                     <h4>Cerah Berawan</h4>`
             } else if (cuaca == 2) {
                 result2.innerHTML = `<h5> Cuaca Hari Ini :  <i class="wi wi-day-cloudy"></i> Cerah Berawan</h5>`
+                result8.innerHTML = `<img src="https://img.icons8.com/clouds/100/undefined/sun.png"/>
+                                    <h4>Cerah Berawan</h4>`
             } else if (cuaca == 4) {
                 result2.innerHTML = `<h5> Cuaca Hari Ini :  <i class="wi wi-day-sunny-overcast"></i> Berawan Tebal</h5>`
             } else if (cuaca == 5) {

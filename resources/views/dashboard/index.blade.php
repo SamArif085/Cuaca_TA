@@ -14,10 +14,10 @@
         </div>
     </div>
     <div class=" container-fluid">
-        <div class=" row p-md-5 p-sm-5">
+        <div class=" row p-md-5 p-sm-5 ">
             <div class="col-2">
                 <select class="form-select form-select-sm input-keyword" id="Provinsi">
-                    <option value="0" selected>Open this select menu</option>
+                    <option value="0" selected>Pilih Provinsi</option>
                     @foreach ($Provinsi['data'] as $p)
                         <option value="{{ $p->nama_provinsi }}">{{ $p->nama_provinsi }}</option>
                     @endforeach
@@ -25,21 +25,9 @@
             </div>
             <div class="col-2">
                 <select class="form-select form-select-sm input-keyword2" name="nama_provinsi" id="kota">
-                    <option value='0' selected>Open this select menu</option>
+                    <option value='0' selected>Pilih</option>
                 </select>
             </div>
-            {{-- <div class="col-2">
-                <select class="form-select form-select-sm input-keyword2">
-                    <option selected>Open this select menu</option>
-                    @php
-                        $Kota = DB::table('kota')->get();
-                    @endphp
-
-                    @foreach ($Kota as $k)
-                        <option value="{{ $k->nama_daerah }}">{{ $k->nama_daerah }}</option>
-                    @endforeach
-                </select>
-            </div> --}}
             <div class="col-1">
                 <button id="button-addon2" type="button" class="btn btn-primary"><span
                         data-feather="search"></span></button>
@@ -69,32 +57,36 @@
         </div>
     </div>
     <div class="container d-flex justify-content-center">
-        <div class="card mt-5 pb-5">
+        <div class="card mb-5  mt-3">
             <div class="d-flex flex-row justify-content-between p-3 adiv text-white">
                 <i class="fas fa-chevron-left"></i>
                 <span class="pb-3">feedback</span>
                 <i class="fas fa-times"></i>
             </div>
             <div class="mt-2 p-4 text-center">
-                <h6 class="mb-0">Apakah Ramalah Hari Ini Sudah Akurat?</h6>
+                <h6 class="mb-3">Apakah Ramalah Hari Ini Sudah Akurat?</h6>
                 <small class="px-3">Berikan Ulasan</small>
-                <div class="d-flex flex-row justify-content-center mt-2 g-2 row">
-                    <div class="col">
-                        <input type="radio" class="btn-check" name="options" id="option1" autocomplete="off" checked>
-                        <label class="btn btn-success" for="option1">Akurat</label>
+                <form action="/dashboard" method="post" enctype="multipart/form-data">
+                    @csrf
+                    <div class="d-flex flex-row justify-content-center mt-5 g-2 row">
+                        <div class="col">
+                            <input type="radio" class="btn-check" value="Akurat" name="nama_ulasan" id="option1"
+                                autocomplete="off" checked>
+                            <label class="btn btn-success" for="option1">Akurat</label>
+                        </div>
+                        <div class="col pb-5">
+                            <input type="radio" class="btn-check" value="Tidak Akurat" name="nama_ulasan" id="option2"
+                                autocomplete="off">
+                            <label class="btn btn-danger" for="option2">Tidak</label>
+                        </div>
                     </div>
-                    <div class="col">
-                        <input type="radio" class="btn-check" name="options" id="option2" autocomplete="off">
-                        <label class="btn btn-danger" for="option2">Tidak</label>
+                    <div class="pb-5 pb-sm-5">
+                        <button type="submit" class="btn btn-primary btn-block"><span>Send</span></button>
                     </div>
+                </form>
+                <div class="">
+                    <p class="">Developer Tim</p>
                 </div>
-                <div class="form-group mt-4">
-                    <textarea class="form-control" rows="4" placeholder="Message"></textarea>
-                </div>
-                <div class="mt-2">
-                    <button type="button" class="btn btn-primary btn-block"><span>Send</span></button>
-                </div>
-                <p class="mt-3">Developer Tim</p>
             </div>
         </div>
     </div>
