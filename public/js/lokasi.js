@@ -24,20 +24,23 @@ searchButton.addEventListener('click', function () {
         .then(response => {
             let result = document.querySelector('.result')
 
-            result.innerHTML = `<h2 style="margin-bottom: 15px;">${response.data.description}, ${response.data.domain}</h2>
-                                <h5><span> Temperature : ${response.data.params[5].times[0].celcius}</span></h5>
+            result.innerHTML = `<h5><span> Temperature : ${response.data.params[5].times[0].celcius}</span></h5>
                                  <h5><span> Kecepatan Angin : ${response.data.params[8].times[0].kph} km/jam</span></h5>
                                  <h5> Kelembapan : ${response.data.params[0].times[0].value}</h5>`
             let result2 = document.querySelector('.result2')
-
+            let result8 = document.querySelector('.result8')
             var cuaca = response.data.params[6].times[0].code;
 
             if (cuaca == 3) {
                 result2.innerHTML = `<h5> Cuaca Hari Ini :  <i class="wi wi-cloudy"></i> Berawan </h5>`
+                result8.innerHTML = `<img src="https://img.icons8.com/clouds/100/undefined/clouds.png"/>
+                                    <h4>Berawan</h4>`
             } else if (cuaca == 0) {
                 result2.innerHTML = `<h5> Cuaca Hari Ini :  <i class="wi wi-day-sunny"></i> Cerah </h5>`
             } else if (cuaca == 1) {
                 result2.innerHTML = `<h5> Cuaca Hari Ini :  <i class="wi wi-day-cloudy"></i> Cerah Berawan</h5>`
+                result8.innerHTML = `<img src="https://img.icons8.com/clouds/100/undefined/sun.png"/>
+                                    <h4>Cerah Berawan</h4>`
             } else if (cuaca == 2) {
                 result2.innerHTML = `<h5> Cuaca Hari Ini :  <i class="wi wi-day-cloudy"></i> Cerah Berawan</h5>`
             } else if (cuaca == 4) {
@@ -61,30 +64,31 @@ searchButton.addEventListener('click', function () {
             } else if (cuaca == 97) {
                 result2.innerHTML = `<h5> Cuaca Hari Ini :  <i class="wi wi-night-snow-thunderstorm"></i> Hujan Petir</h5>`
             }
-
-
-            // result2.innerHTML = `<h5> Cuaca Hari Ini : ${response.data.params[6].times[0].name}</h5>`
-
+            let result7 = document.querySelector('.result7')
+            result7.innerHTML = `<h2 style="margin-bottom: 15px;">${response.data.description}, ${response.data.domain}</h2>`
+            let result6 = document.querySelector('.result6')
+            result6.innerHTML = `<h2 style="margin-bottom: 15px;">${response.data.description}, ${response.data.domain}</h2>`
             let result3 = document.querySelector('.result3')
 
-            result3.innerHTML = `<h2 style="margin-bottom: 15px;">${response.data.description}, ${response.data.domain}</h2>
-                                <h5><span> Prediksi Besok </span></h5>
-                                <h5><span> Temperature : ${response.data.params[5].times[4].celcius}</span></h5>
-                                <h5><span> Kecepatan Angin : ${response.data.params[8].times[4].kph} km/jam</span></h5>
-                                <h5> Cuaca Hari Ini : ${response.data.params[6].times[4].name}</h5>
-                                <br>
-                                <h5><span> Prediksi Lusa </span></h5>
-                                <h5><span> Temperature : ${response.data.params[5].times[8].celcius}</span></h5>
-                                <h5><span> Kecepatan Angin : ${response.data.params[8].times[8].kph} km/jam</span></h5>
-                                <h5> Cuaca Hari Ini : ${response.data.params[6].times[8].name}</h5>`
+            result3.innerHTML = `<h3> Prediksi Besok </h3>
+                                <h5> Temperature : ${response.data.params[5].times[4].celcius}</h5>
+                                <h5> Kecepatan Angin : ${response.data.params[8].times[4].kph}km/jam</h5>
+                                <h5> Prediksi Cuaca : ${response.data.params[6].times[4].name}</h5>`
+
+            let result4 = document.querySelector('.result4')
+
+            result4.innerHTML = `<h3> Prediksi Lusa </h3>
+                                <h5> Temperature : ${response.data.params[5].times[8].celcius}</h5>
+                                <h5> Kecepatan Angin : ${response.data.params[8].times[8].kph} km/jam</h5>
+                                <h5> Prediksi Cuaca : ${response.data.params[6].times[8].name}</h5>`
 
             var badai = response.data.params[5].times[0].celcius;
 
             if (badai > 28) {
-                let badai = document.querySelector('.result4')
+                let badai = document.querySelector('.result5')
                 badai.innerHTML = `<h5> Potensi Badai :  Waspada </h5>`
             } else {
-                let badai = document.querySelector('.result4')
+                let badai = document.querySelector('.result5')
                 badai.innerHTML = `<h5> Potensi Badai : Tidak Ada </h5>`
             }
 

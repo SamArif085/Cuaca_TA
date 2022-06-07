@@ -7,9 +7,8 @@
             </div>
             <div class="col bg-dark text-white p-2 result2">
 
-
             </div>
-            <div class="col-3 bg-primary text-white p-2 result4">
+            <div class="col-3 bg-primary text-white p-2 result5">
                 <h5> Potensi Badai:</h5>
             </div>
         </div>
@@ -50,14 +49,22 @@
     <div class="col p-5 mb-4 bg-light rounded-3">
         <div class="container-fluid py-5">
             <h1 class="display-5 fw-bold">Cuaca Hari Ini</h1>
-            <p class="col-md-8 fs-4 result"></p>
+            <h2 class="result6"></h2>
+            <div class=" container  p-md-5 p-sm-5 d-flex">
+                <div class="col-md-8 fs-4 result"></div>
+                <div class="col-md-8 fs-4 result8"></div>
+            </div>
             {{-- <button class="btn btn-primary btn-lg" type="button">Example button</button> --}}
         </div>
     </div>
     <div class="col p-5 mb-4 bg-light rounded-3">
         <div class="container-fluid py-5">
             <h1 class="display-5 fw-bold">Prediksi Cuaca Kedepan</h1>
-            <p class="col-md-8 fs-4 result3"></p>
+            <h2 class="result7"></h2>
+            <div class=" container p-md-5 p-sm-5 d-flex">
+                <div class="col-md-8 fs-4 col-sm-8  result3"></div>
+                <div class="col-md-8 fs-4 col-sm-8  result4"></div>
+            </div>
             {{-- <button class="btn btn-primary btn-lg" type="button">Example button</button> --}}
         </div>
     </div>
