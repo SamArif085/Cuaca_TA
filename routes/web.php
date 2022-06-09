@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\GempaController;
+use App\Http\Controllers\HomeAwalController;
 use App\Http\Controllers\KotaController;
 use App\Http\Controllers\LoginControler;
 use App\Http\Controllers\ProvinsiController;
@@ -20,7 +21,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('login.index');
+    return view('index');
 });
 Route::get('/register', function () {
     return view('register.index');
@@ -38,7 +39,7 @@ Route::post('/register', [RegistrasiControler::class, 'store']);
 // Route::get('/dashboard', function () {
 //     return view('dashboard.index');
 // })->middleware('auth');
-
+Route::get('/', [HomeAwalController::class, 'index']);
 Route::get('/dashboard', [ProvinsiController::class, 'index'])->middleware('auth');
 Route::get('/dashboard/gempa', [GempaController::class, 'index'])->middleware('auth');
 Route::get('/get-kota/{id}', [ProvinsiController::class, 'Kota'])->middleware('auth');

@@ -1,9 +1,12 @@
-@extends('dashboard.layout.main')
+@extends('layout.main')
 @section('container')
+    <div class="text-center">
+        <img src="img/logo.png" class="rounded" alt="..." width="300" height="auto">
+    </div>
     <div class=" container mr-3 ">
         <div class="row p-md-5 p-sm-5 ">
             <div class="col-3 bg-primary text-white p-2">
-                <h5>Halo {{ auth()->user()->name }}</h5>
+
             </div>
             <div class="col bg-dark text-white p-2 result2">
 
@@ -340,4 +343,4 @@
 
         });
     </script>
-@endsection=0-987611121
+@endsection

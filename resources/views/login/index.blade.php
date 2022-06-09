@@ -1,5 +1,4 @@
 @extends('layout.main')
-
 @section('konten')
     <div class="row justify-content-center">
         <div class="col-lg-8">
@@ -35,6 +34,8 @@
                     <button class="w-100 btn btn-lg btn-primary" type="submit">Login</button>
                 </form>
                 <small class="d-block text-center mt-2">Belum punya akun ? <a href="/register">Buat Akun</a></small>
+                <small class="d-block text-center mt-2"> <a href="/">Kembali<span
+                            data-feather="corner-down-left"></span></a></small>
             </main>
         </div>
     </div>

@@ -46,7 +46,7 @@
                     </div>
                     <button class="w-100 btn btn-lg btn-success mt-4" type="submit">Register</button>
                 </form>
-                <small class="d-block text-center mt-2">Sudah punya akun ? <a href="/">Login</a></small>
+                <small class="d-block text-center mt-2">Sudah punya akun ? <a href="/login">Login</a></small>
             </main>
         </div>
     </div>
