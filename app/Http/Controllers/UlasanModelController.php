@@ -52,7 +52,7 @@ class UlasanModelController extends Controller
        
      return response()->json([
             'status' => 200,
-            'message' => "Data Berhasil Diubah",
+            'message' => "Terima Kasih, Data Berhasil Di Simpan",
         ]);
     }
         public function store2(Request $request)
@@ -67,7 +67,7 @@ class UlasanModelController extends Controller
        
      return response()->json([
             'status' => 200,
-            'message' => "Data Berhasil Diubah",
+            'message' => "Terima Kasih, Data Berhasil Di Simpan",
         ]);
     }
 

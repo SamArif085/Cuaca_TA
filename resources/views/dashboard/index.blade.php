@@ -66,36 +66,38 @@
             <div class="mt-2 p-4 text-center">
                 <h6 class="mb-3">Apakah Ramalah Hari Ini Sudah Akurat?</h6>
                 <small class="px-3">Berikan Ulasan</small>
-                <form id="ulasan">
-                    <div class="d-flex flex-row justify-content-center mt-5 g-2 row">
-                        <div class="col">
-                            <input type="radio" class="btn-check" value="Akurat" onclick="aktif()" name="nama_ulasan"
-                                id="option1" autocomplete="off" checked>
-                            <label class="btn btn-success" for="option1">Akurat</label>
-                            <span class="text-danger" id="akuratError"></span>
-                        </div>
+                <div class="d-flex justify-content-between">
+                    <form id="ulasan">
+                        <div class="d-flex flex-row justify-content-center mt-5 g-2 row">
+                            <div class="col pb-5">
+                                <input type="radio" class="btn-check" value="Akurat" onclick="aktif()"
+                                    name="nama_ulasan" id="option1" autocomplete="off" checked>
+                                <label class="btn btn-success" for="option1">Akurat</label>
+                                <span class="text-danger" id="akuratError"></span>
+                            </div>
 
-                    </div>
-                    <div class="pb-5 pb-sm-5">
-                        <button type="submit" class="btn btn-primary btn-block save-data"
-                            id="tbl1"><span>Send</span></button>
-                    </div>
-                </form>
-                <form id="ulasan1">
-                    <div class="d-flex flex-row justify-content-center mt-5 g-2 row">
-
-                        <div class="col pb-5">
-                            <input type="radio" class="btn-check" value="Tidak Akurat" onclick="tidakAktif()"
-                                name="nama_ulasan" id="option2" autocomplete="off">
-                            <label class="btn btn-danger" for="option2">Tidak</label>
-                            <span class="text-danger" id="tidakError"></span>
                         </div>
-                    </div>
-                    <div class="pb-5 pb-sm-5">
-                        <button type="submit" class="btn btn-primary btn-block save-data1"
-                            id="tbl2"><span>Send</span></button>
-                    </div>
-                </form>
+                        <div class="pb-5 pb-sm-5">
+                            <button type="submit" class="btn btn-primary btn-block save-data"
+                                id="tbl1"><span>Send</span></button>
+                        </div>
+                    </form>
+                    <form id="ulasan1">
+                        <div class="d-flex flex-row justify-content-center mt-5 g-2 row">
+                            <div class="col pb-5">
+                                <input type="radio" class="btn-check" value="Tidak Akurat" onclick="tidakAktif()"
+                                    name="nama_ulasan" id="option2" autocomplete="off">
+                                <label class="btn btn-danger" for="option2">Tidak</label>
+                                <span class="text-danger" id="tidakError"></span>
+                            </div>
+                        </div>
+                        <div class="pb-5 pb-sm-5">
+                            <button type="submit" class="btn btn-primary btn-block save-data1"
+                                id="tbl2"><span>Send</span></button>
+                        </div>
+                    </form>
+                </div>
+
                 <div class="">
                     <p class="">Developer Tim</p>
                 </div>
@@ -231,7 +233,6 @@
         $("#tbl1").hide();
         $("#tbl2").hide();
 
-
         function aktif() {
             $("#tbl1").show();
             $("#tbl2").hide();
@@ -270,6 +271,24 @@
             });
 
         });
+
+        toastr.options = {
+            "closeButton": false,
+            "debug": false,
+            "newestOnTop": false,
+            "progressBar": false,
+            "positionClass": "toast-bottom-center",
+            "preventDuplicates": false,
+            "onclick": null,
+            "showDuration": "300",
+            "hideDuration": "1000",
+            "timeOut": "5000",
+            "extendedTimeOut": "1000",
+            "showEasing": "swing",
+            "hideEasing": "linear",
+            "showMethod": "fadeIn",
+            "hideMethod": "fadeOut"
+        }
 
         $('#ulasan1').submit(function(e) {
             e.preventDefault();
