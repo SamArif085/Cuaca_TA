@@ -18,6 +18,7 @@ class UlasanModelController extends Controller
     public function index()
     {
         $data = UlasanModel::all();
+        
         return view('UlasanModel', compact('data'));
     }
 
@@ -40,14 +41,34 @@ class UlasanModelController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request ,[
-        'nama_ulasan' => 'required']);
-
+    
+        
         $data = new UlasanModel();
-        $data->nama_ulasan = $request->nama_ulasan;
+      
+        $data->nama_ulasan = $request->nama;
+
         $data->save();
+
        
-        return redirect('/dashboard')->with(['success' => 'Data Berhasil Ditambahkan']);
+     return response()->json([
+            'status' => 200,
+            'message' => "Data Berhasil Diubah",
+        ]);
+    }
+        public function store2(Request $request)
+    {
+    
+        
+        $data = new UlasanModel();
+      
+        $data->nama_ulasan = $request->jenis_kelamin;
+        $data->save();
+
+       
+     return response()->json([
+            'status' => 200,
+            'message' => "Data Berhasil Diubah",
+        ]);
     }
 
     /**

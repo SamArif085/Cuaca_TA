@@ -66,22 +66,34 @@
             <div class="mt-2 p-4 text-center">
                 <h6 class="mb-3">Apakah Ramalah Hari Ini Sudah Akurat?</h6>
                 <small class="px-3">Berikan Ulasan</small>
-                <form action="/dashboard" method="post" enctype="multipart/form-data">
-                    @csrf
+                <form id="ulasan">
                     <div class="d-flex flex-row justify-content-center mt-5 g-2 row">
                         <div class="col">
-                            <input type="radio" class="btn-check" value="Akurat" name="nama_ulasan" id="option1"
-                                autocomplete="off" checked>
+                            <input type="radio" class="btn-check" value="Akurat" onclick="aktif()" name="nama_ulasan"
+                                id="option1" autocomplete="off" checked>
                             <label class="btn btn-success" for="option1">Akurat</label>
+                            <span class="text-danger" id="akuratError"></span>
                         </div>
+
+                    </div>
+                    <div class="pb-5 pb-sm-5">
+                        <button type="submit" class="btn btn-primary btn-block save-data"
+                            id="tbl1"><span>Send</span></button>
+                    </div>
+                </form>
+                <form id="ulasan1">
+                    <div class="d-flex flex-row justify-content-center mt-5 g-2 row">
+
                         <div class="col pb-5">
-                            <input type="radio" class="btn-check" value="Tidak Akurat" name="nama_ulasan" id="option2"
-                                autocomplete="off">
+                            <input type="radio" class="btn-check" value="Tidak Akurat" onclick="tidakAktif()"
+                                name="nama_ulasan" id="option2" autocomplete="off">
                             <label class="btn btn-danger" for="option2">Tidak</label>
+                            <span class="text-danger" id="tidakError"></span>
                         </div>
                     </div>
                     <div class="pb-5 pb-sm-5">
-                        <button type="submit" class="btn btn-primary btn-block"><span>Send</span></button>
+                        <button type="submit" class="btn btn-primary btn-block save-data1"
+                            id="tbl2"><span>Send</span></button>
                     </div>
                 </form>
                 <div class="">
@@ -90,8 +102,6 @@
             </div>
         </div>
     </div>
-
-
 
 
 
@@ -163,24 +173,10 @@
             </div>
         </div>
     </div>
-
-
-
-    </div>
-
-
-
-
-
-    </div>
 @endsection
 
 @section('scripts')
     <script type='text/javascript'>
-        // const searchButton = document.querySelector('#button-addon2');
-        // const inputKeyword = document.querySelector('.input-keyword');
-        // const inputKeyword2 = document.querySelector('.input-keyword2');
-
         $(document).ready(function() {
             $('#Provinsi').on('change', function() {
                 var id = $(this).val();
@@ -208,65 +204,99 @@
                         }
                     }
                 });
-            }); // $.ajax({
-            //     url: '{{ url('/getkota') }}',
-            //     type: 'GET',
-            //     data: {
-            //         nama_provinsi: nama_provinsi
-            //     },
-            //     success: function(data) {
-            //         $('#Kota').html(data);
-            //     }
-            // })
-
+            });
         })
 
+        // $(".save-data").click(function(event) {
+        //     event.preventDefault();
 
-        // searchButton.addEventListener('click', function() {
+        //     let Aktif = $("#option1").val();
 
-        //     fetch("https://cuaca-gempa-rest-api.vercel.app/weather/" + inputKeyword.value + "/" + inputKeyword2
-        //             .value)
-        //         .then(response => response.json())
-        //         .then(response => {
-        //             let result = document.querySelector('.result')
+        //     let _token = $('meta[name="csrf-token"]').attr('content');
+        //     $.ajax({
+        //         url: "/dashboard/save-data",
+        //         type: "POST",
+        //         data: {
+        //             Aktif = Aktif,
+        //             _token: _token
+        //         },
+        //         dataType: "json",
+        //         success: function(response) {
+        //             console.log(response);
 
-        //             result.innerHTML = `<h2 style="margin-bottom: 15px;">${response.data.description}, ${response.data.domain}</h2>
-    //                         <h5><span> Temperature : ${response.data.params[5].times[0].celcius}</span></h5>
-    //                          <h5><span> Kecepatan Angin : ${response.data.params[8].times[0].kph} km/jam</span></h5>
-    //                          <h5> Kelembapan : ${response.data.params[0].times[0].value}</h5>`
-        //             let result2 = document.querySelector('.result2')
+        //         },
+        //     });
+        // });
 
-        //             result2.innerHTML = `<h5> Cuaca Hari Ini : ${response.data.params[6].times[0].name}</h5>`
-
-        //             let result3 = document.querySelector('.result3')
-
-        //             result3.innerHTML = `<h2 style="margin-bottom: 15px;">${response.data.description}, ${response.data.domain}</h2>
-    //                         <h5><span> Prediksi Besok </span></h5>
-    //                         <h5><span> Temperature : ${response.data.params[5].times[4].celcius}</span></h5>
-    //                         <h5><span> Kecepatan Angin : ${response.data.params[8].times[4].kph} km/jam</span></h5>
-    //                         <h5> Cuaca Hari Ini : ${response.data.params[6].times[4].name}</h5>
-    //                         <br>
-    //                         <h5><span> Prediksi Lusa </span></h5>
-    //                         <h5><span> Temperature : ${response.data.params[5].times[8].celcius}</span></h5>
-    //                         <h5><span> Kecepatan Angin : ${response.data.params[8].times[8].kph} km/jam</span></h5>
-    //                         <h5> Cuaca Hari Ini : ${response.data.params[6].times[8].name}</h5>`
+        $("#tbl1").hide();
+        $("#tbl2").hide();
 
 
+        function aktif() {
+            $("#tbl1").show();
+            $("#tbl2").hide();
+        }
+
+        function tidakAktif() {
+            $("#tbl2").show();
+            $("#tbl1").hide();
+        }
 
 
-        //             var badai = response.data.params[5].times[0].celcius;
+        $('#ulasan').submit(function(e) {
+            e.preventDefault();
 
-        //             if (badai > 28) {
-        //                 let badai = document.querySelector('.result4')
-        //                 badai.innerHTML = `<h5> Potensi Badai :  Waspada </h5>`
-        //             } else {
-        //                 let badai = document.querySelector('.result4')
-        //                 badai.innerHTML = `<h5> Potensi Badai : Tidak Ada </h5>`
-        //             }
+            let nama = $("#option1").val();
+            let jenis_kelamin = $("#option2").val();
 
-        //         })
-        //     inputKeyword.value = null;
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
 
-        // })
+
+            $.ajax({
+                dataType: 'json',
+                type: "POST",
+                url: "/dashboard/save-data",
+                data: {
+                    nama: nama,
+                },
+
+                success: function(response) {
+                    toastr.success(response.message);
+                }
+            });
+
+        });
+
+        $('#ulasan1').submit(function(e) {
+            e.preventDefault();
+
+            let jenis_kelamin = $("#option2").val();
+
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
+
+
+            $.ajax({
+                dataType: 'json',
+                type: "POST",
+                url: "/dashboard/save-data1",
+                data: {
+                    jenis_kelamin: jenis_kelamin,
+
+                },
+
+                success: function(response) {
+                    toastr.success(response.message);
+                }
+            });
+
+        });
     </script>
 @endsection

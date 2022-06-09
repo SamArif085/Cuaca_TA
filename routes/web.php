@@ -44,4 +44,5 @@ Route::get('/dashboard/gempa', [GempaController::class, 'index'])->middleware('a
 Route::get('/get-kota/{id}', [ProvinsiController::class, 'Kota'])->middleware('auth');
 
 //tambahdata
-Route::post('/dashboard',[UlasanModelController::class, 'store']);
+Route::post('/dashboard/save-data',[UlasanModelController::class, 'store']);
+Route::post('/dashboard/save-data1',[UlasanModelController::class, 'store2']);
