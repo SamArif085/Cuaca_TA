@@ -69,24 +69,15 @@
             <div class="mt-2 p-4 text-center">
                 <h6 class="mb-3">Apakah Ramalah Hari Ini Sudah Akurat?</h6>
                 <small class="px-3">Berikan Ulasan</small>
-                <div class="d-flex justify-content-between">
+                <div class="d-flex  justify-content-around">
                     <form id="ulasan">
-                        <div class="d-flex flex-row justify-content-center mt-5 g-2 row">
+                        <div class="d-flex flex-row justify-content-center mt-5  g-2 row">
                             <div class="col pb-5">
                                 <input type="radio" class="btn-check" value="Akurat" onclick="aktif()"
                                     name="nama_ulasan" id="option1" autocomplete="off" checked>
                                 <label class="btn btn-success" for="option1">Akurat</label>
                                 <span class="text-danger" id="akuratError"></span>
                             </div>
-
-                        </div>
-                        <div class="pb-5 pb-sm-5">
-                            <button type="submit" class="btn btn-primary btn-block save-data"
-                                id="tbl1"><span>Send</span></button>
-                        </div>
-                    </form>
-                    <form id="ulasan1">
-                        <div class="d-flex flex-row justify-content-center mt-5 g-2 row">
                             <div class="col pb-5">
                                 <input type="radio" class="btn-check" value="Tidak Akurat" onclick="tidakAktif()"
                                     name="nama_ulasan" id="option2" autocomplete="off">
@@ -95,8 +86,8 @@
                             </div>
                         </div>
                         <div class="pb-5 pb-sm-5">
-                            <button type="submit" class="btn btn-primary btn-block save-data1"
-                                id="tbl2"><span>Send</span></button>
+                            <button type="submit" class="btn btn-primary btn-block save-data"
+                                id="tbl1"><span>Send</span></button>
                         </div>
                     </form>
                 </div>
@@ -107,81 +98,11 @@
             </div>
         </div>
     </div>
-
-
-
-    <div id="feedback-form-wrapper">
-        <div id="floating-icon">
-            <button type="button" class="btn btn-primary btn-sm rounded-0" data-toggle="modal" data-target="#myModal">
-                Feedback
-            </button>
-
-        </div>
-        <div id="feedback-form-modal">
-            <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">Feedback Form</h5>
-                            {{-- <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true" data-feather="x-circle"></span>
-                            </button> --}}
-                        </div>
-                        <div class="modal-body">
-                            <form>
-                                <div class="form-group container-fluid">
-                                    <label for="exampleFormControlTextarea1">Seberapa besar kemungkinan Anda ingin
-                                        merekomendasikan untuk kami?</label>
-                                    <div class="rating-input-wrapper d-flex justify-content-between mt-2">
-                                        <label><input type="radio" name="rating" /><span
-                                                class="border rounded px-3 py-2">1</span></label>
-                                        <label><input type="radio" name="rating" /><span
-                                                class="border rounded px-3 py-2">2</span></label>
-                                        <label><input type="radio" name="rating" /><span
-                                                class="border rounded px-3 py-2">3</span></label>
-                                        <label><input type="radio" name="rating" /><span
-                                                class="border rounded px-3 py-2">4</span></label>
-                                        <label><input type="radio" name="rating" /><span
-                                                class="border rounded px-3 py-2">5</span></label>
-                                        <label><input type="radio" name="rating" /><span
-                                                class="border rounded px-3 py-2">6</span></label>
-                                        <label><input type="radio" name="rating" /><span
-                                                class="border rounded px-3 py-2">7</span></label>
-                                        <label><input type="radio" name="rating" /><span
-                                                class="border rounded px-3 py-2">8</span></label>
-                                        <label><input type="radio" name="rating" /><span
-                                                class="border rounded px-3 py-2">9</span></label>
-                                        <label><input type="radio" name="rating" /><span
-                                                class="border rounded px-3 py-2">10</span></label>
-                                    </div>
-                                    <div class="rating-labels d-flex justify-content-between mt-1 p-1">
-                                        <label>Kurang</label>
-                                        <label>Sangat Bagus</label>
-                                    </div>
-                                </div>
-                                <div class="form-group col p-3">
-                                    <label for="input-one">Apa yang membuat anda kurang nyaman dengan layanan kami?</label>
-                                    <input type="text" class="form-control" id="input-one" placeholder="">
-                                </div>
-                                <div class="form-group col p-3">
-                                    <label for="input-two">Dapatkah anda dapat memberikan saran pada kami?</label>
-                                    <textarea class="form-control" id="input-two" rows="3"></textarea>
-                                </div>
-                            </form>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-primary">Submit</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 @endsection
 
 @section('scripts')
     <script type='text/javascript'>
+        //Option Provinsi & Kota
         $(document).ready(function() {
             $('#Provinsi').on('change', function() {
                 var id = $(this).val();
@@ -212,27 +133,7 @@
             });
         })
 
-        // $(".save-data").click(function(event) {
-        //     event.preventDefault();
-
-        //     let Aktif = $("#option1").val();
-
-        //     let _token = $('meta[name="csrf-token"]').attr('content');
-        //     $.ajax({
-        //         url: "/dashboard/save-data",
-        //         type: "POST",
-        //         data: {
-        //             Aktif = Aktif,
-        //             _token: _token
-        //         },
-        //         dataType: "json",
-        //         success: function(response) {
-        //             console.log(response);
-
-        //         },
-        //     });
-        // });
-
+        //Ulasan Tombol
         $("#tbl1").hide();
         $("#tbl2").hide();
 
@@ -242,38 +143,74 @@
         }
 
         function tidakAktif() {
-            $("#tbl2").show();
-            $("#tbl1").hide();
+            $("#tbl1").show();
+            $("#tbl2").hide();
         }
 
+        $(document).ready(function() {
+            $('#option1').click(function() {
+                var nama_ulasan = $(this).val();
 
-        $('#ulasan').submit(function(e) {
-            e.preventDefault();
+                $('#ulasan').submit(function(e) {
+                    e.preventDefault();
 
-            let nama = $("#option1").val();
-            let jenis_kelamin = $("#option2").val();
 
-            $.ajaxSetup({
-                headers: {
-                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                }
+
+                    $.ajaxSetup({
+                        headers: {
+                            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                        }
+                    });
+
+
+                    $.ajax({
+                        dataType: 'json',
+                        type: "POST",
+                        url: "/dashboard/save-data",
+                        data: {
+                            nama_ulasan: nama_ulasan,
+                        },
+
+                        success: function(response) {
+                            toastr.success(response.message);
+                        }
+
+                    });
+
+
+                });
+
             });
+            $('#option2').click(function() {
+                var nama_ulasan = $(this).val();
+                $('#ulasan').submit(function(e) {
+                    e.preventDefault();
+
+                    $.ajaxSetup({
+                        headers: {
+                            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                        }
+                    });
 
 
-            $.ajax({
-                dataType: 'json',
-                type: "POST",
-                url: "/dashboard/save-data",
-                data: {
-                    nama: nama,
-                },
+                    $.ajax({
+                        dataType: 'json',
+                        type: "POST",
+                        url: "/dashboard/save-data",
+                        data: {
+                            nama_ulasan: nama_ulasan,
+                        },
 
-                success: function(response) {
-                    toastr.success(response.message);
-                }
+                        success: function(response) {
+                            toastr.success(response.message);
+                        }
+
+                    });
+
+
+                });
 
             });
-
 
         });
 
@@ -295,43 +232,15 @@
             "hideMethod": "fadeOut"
         }
 
-        $('#ulasan1').submit(function(e) {
-            e.preventDefault();
-
-            let jenis_kelamin = $("#option2").val();
-
-            $.ajaxSetup({
-                headers: {
-                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                }
-            });
-
-
-            $.ajax({
-                dataType: 'json',
-                type: "POST",
-                url: "/dashboard/save-data1",
-                data: {
-                    jenis_kelamin: jenis_kelamin,
-
-                },
-
-                success: function(response) {
-                    toastr.success(response.message);
-                }
-            });
-
-        });
-
         $(".save-data").click(function() {
             $("#option2").attr("onclick", "new_function_name()");
             $("#option1").attr("onclick", "new_function_name()");
             setInterval(function() {
-
-                $(".save-data").hide();
+                $("#option2").attr("onclick", "new_function_name()");
             }, 1000);
 
-        });
+            $(".save-data").hide();
+        }, 1000);
 
         $(".save-data1").click(function() {
             $("#option1").attr("onclick", "new_function_name()");

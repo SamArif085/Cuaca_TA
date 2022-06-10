@@ -45,7 +45,7 @@ class UlasanModelController extends Controller
         
         $data = new UlasanModel();
       
-        $data->nama_ulasan = $request->nama;
+        $data->nama_ulasan = $request->nama_ulasan;
 
         $data->save();
 
@@ -61,7 +61,7 @@ class UlasanModelController extends Controller
         
         $data = new UlasanModel();
       
-        $data->nama_ulasan = $request->jenis_kelamin;
+        $data->nama_ulasan = $request->nama_ulasan1;
         $data->save();
 
        
