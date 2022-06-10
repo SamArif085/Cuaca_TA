@@ -40,6 +40,7 @@ Route::post('/register', [RegistrasiControler::class, 'store']);
 //     return view('dashboard.index');
 // })->middleware('auth');
 Route::get('/', [HomeAwalController::class, 'index']);
+Route::get('/get-home/{id}', [HomeAwalController::class, 'Kota']);
 Route::get('/dashboard', [ProvinsiController::class, 'index'])->middleware('auth');
 Route::get('/dashboard/gempa', [GempaController::class, 'index'])->middleware('auth');
 Route::get('/get-kota/{id}', [ProvinsiController::class, 'Kota'])->middleware('auth');

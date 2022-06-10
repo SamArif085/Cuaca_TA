@@ -1,5 +1,5 @@
 @extends('dashboard.layout.main')
-@section('container')
+@section('container1')
 
     <body>
         <div class=" text-center" id="map"></div>

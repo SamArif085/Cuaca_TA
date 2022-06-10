@@ -19,7 +19,37 @@ class Kota extends Seeder
         $data = [
        [
                 'nama_daerah' => 'Kota-Blitar',
-                'id_provinsi' => DB::table('provinsi')->where('id','=','3')->get('id'),
+                'id_provinsi' => DB::table('provinsi')->get('id')->where('id', '3')->first()->id,
+                'created_at' => now(),
+                'updated_at' => now()
+        ],
+            [
+                'nama_daerah' => 'Kota-Kediri',
+                'id_provinsi' => DB::table('provinsi')->get('id')->where('id', '3')->first()->id,
+                'created_at' => now(),
+                'updated_at' => now()
+        ],
+            [
+                'nama_daerah' => 'Kota-Malang',
+                'id_provinsi' => DB::table('provinsi')->get('id')->where('id', '3')->first()->id,
+                'created_at' => now(),
+                'updated_at' => now()
+        ],
+            [
+                'nama_daerah' => 'Jember',
+                'id_provinsi' => DB::table('provinsi')->get('id')->where('id', '3')->first()->id,
+                'created_at' => now(),
+                'updated_at' => now()
+        ],
+            [
+                'nama_daerah' => 'Surabaya',
+                'id_provinsi' => DB::table('provinsi')->get('id')->where('id', '3')->first()->id,
+                'created_at' => now(),
+                'updated_at' => now()
+        ],
+            [
+                'nama_daerah' => 'Banyuwangi',
+                'id_provinsi' => DB::table('provinsi')->get('id')->where('id', '3')->first()->id,
                 'created_at' => now(),
                 'updated_at' => now()
         ],

@@ -187,7 +187,7 @@
                 var id = $(this).val();
                 $('#kota').find('option').not(':first').remove();
                 $.ajax({
-                    url: '/get-kota/' + id,
+                    url: '/get-home/' + id,
                     type: 'GET',
                     dataType: 'json',
                     success: function(response) {

@@ -1,5 +1,5 @@
 @extends('dashboard.layout.main')
-@section('container')
+@section('container1')
     <div class=" container mr-3 ">
         <div class="row p-md-5 p-sm-5 ">
             <div class="col-3 bg-primary text-white p-2">
@@ -340,4 +340,4 @@
 
         });
     </script>
-@endsection=0-987611121
+@endsection
