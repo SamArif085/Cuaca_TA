@@ -1,8 +1,8 @@
-const searchButton = document.querySelector('#button-addon2');
-const inputKeyword = document.querySelector('.input-keyword');
-const inputKeyword2 = document.querySelector('.input-keyword2');
+var searchButton = document.querySelector('#button-addon2');
+var inputKeyword = document.querySelector('.input-keyword');
+var inputKeyword2 = document.querySelector('.input-keyword2');
 
-
+//API Cuaca
 searchButton.addEventListener('click', function () {
 
     fetch("https://cuaca-gempa-rest-api.vercel.app/weather/" + inputKeyword.value + "/" + inputKeyword2.value)
@@ -23,6 +23,8 @@ searchButton.addEventListener('click', function () {
                                     <h4>Berawan</h4>`
             } else if (cuaca == 0) {
                 result2.innerHTML = `<h5> Cuaca Hari Ini :  <i class="wi wi-day-sunny"></i> Cerah </h5>`
+                result8.innerHTML = `<img src="https://img.icons8.com/clouds/100/undefined/smiling-sun.png"/>
+                                    <h4>Cerah Berawan</h4>`
             } else if (cuaca == 1) {
                 result2.innerHTML = `<h5> Cuaca Hari Ini :  <i class="wi wi-day-cloudy"></i> Cerah Berawan</h5>`
                 result8.innerHTML = `<img src="https://img.icons8.com/clouds/100/undefined/sun.png"/>
@@ -33,24 +35,44 @@ searchButton.addEventListener('click', function () {
                                     <h4>Cerah Berawan</h4>`
             } else if (cuaca == 4) {
                 result2.innerHTML = `<h5> Cuaca Hari Ini :  <i class="wi wi-day-sunny-overcast"></i> Berawan Tebal</h5>`
+                result8.innerHTML = `<img src="https://img.icons8.com/clouds/100/undefined/clouds.png"/>
+                                    <h4>Berawan Tebal</h4>`
             } else if (cuaca == 5) {
                 result2.innerHTML = `<h5> Cuaca Hari Ini :  <i class="wi wi-day-haze"></i> Udara Kabur</h5>`
+                result8.innerHTML = `<img src="https://img.icons8.com/clouds/100/undefined/windsock.png"/>
+                                    <h4>Udara Kabur</h4>`
             } else if (cuaca == 10) {
                 result2.innerHTML = `<h5> Cuaca Hari Ini :  <i class="wi wi-day-fog"></i> Asap </h5>`
+                result8.innerHTML = `<img src="https://img.icons8.com/external-rabit-jes-outline-color-rabit-jes/100/undefined/external-fog-weather-rabit-jes-outline-color-rabit-jes.png"/>
+                                    <h4>Berasap</h4>`
             } else if (cuaca == 45) {
                 result2.innerHTML = `<h5> Cuaca Hari Ini :  <i class="wi wi-day-fog"></i> Kabut</h5>`
+                result8.innerHTML = `<img src="https://img.icons8.com/external-rabit-jes-outline-color-rabit-jes/100/undefined/external-fog-weather-rabit-jes-outline-color-rabit-jes.png"/>
+                                    <h4>Berkabut</h4>`
             } else if (cuaca == 60) {
                 result2.innerHTML = `<h5> Cuaca Hari Ini :  <i class="wi wi-day-showers"></i> Hujan Ringan</h5>`
+                result8.innerHTML = `<img src="https://img.icons8.com/clouds/100/undefined/rain.png"/>
+                                    <h4>Hujan Ringan</h4>`
             } else if (cuaca == 61) {
                 result2.innerHTML = `<h5> Cuaca Hari Ini :  <i class="wi wi-day-rain"></i> Hujan Sedang</h5>`
+                result8.innerHTML = `<img src="https://img.icons8.com/clouds/100/undefined/rain.png"/>
+                                    <h4>Hujan Sedang</h4>`
             } else if (cuaca == 63) {
                 result2.innerHTML = `<h5> Cuaca Hari Ini :  <i class="wi wi-night-sleet-storm"></i> Hujan Lebat</h5>`
+                result8.innerHTML = `<img src="https://img.icons8.com/clouds/100/undefined/rain.png"/>
+                                    <h4>Hujan Lebat</h4>`
             } else if (cuaca == 80) {
                 result2.innerHTML = `<h5> Cuaca Hari Ini :  <i class="wi wi-night-showers"></i> Hujan Lokal </h5>`
+                result8.innerHTML = `<img src="https://img.icons8.com/clouds/100/undefined/rain.png"/>
+                                    <h4>Hujan Lokal</h4>`
             } else if (cuaca == 95) {
                 result2.innerHTML = `<h5> Cuaca Hari Ini :  <i class="wi wi-night-snow-thunderstorm"></i> Hujan Petir</h5>`
+                result8.innerHTML = `<img src="https://img.icons8.com/clouds/100/undefined/storm.png"/>
+                                    <h4>Hujan Petir</h4>`
             } else if (cuaca == 97) {
                 result2.innerHTML = `<h5> Cuaca Hari Ini :  <i class="wi wi-night-snow-thunderstorm"></i> Hujan Petir</h5>`
+                result8.innerHTML = `<img src="https://img.icons8.com/clouds/100/undefined/storm.png"/>
+                                    <h4>Hujan Petir</h4>`
             }
             let result7 = document.querySelector('.result7')
             result7.innerHTML = `<h2 style="margin-bottom: 15px;">${response.data.description}, ${response.data.domain}</h2>`
@@ -81,6 +103,8 @@ searchButton.addEventListener('click', function () {
             }
 
         })
-    inputKeyword.value = null;
+    // inputKeyword.value = id;
+    // inputKeyword2.value = null;
+})
 
-})        
+
