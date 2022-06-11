@@ -33,7 +33,7 @@ $(document).ready(function () {
 
 //menampilkan ulasan
 $("#ul").hide();
-$(".").click(function () {
+$(".src").click(function () {
     $("#ul").show();
 });
 //Ulasan Submit
