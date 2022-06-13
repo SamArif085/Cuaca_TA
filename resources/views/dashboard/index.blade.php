@@ -6,7 +6,6 @@
                 <h5>Halo {{ auth()->user()->name }}</h5>
             </div>
             <div class="col bg-dark text-white p-2 result2">
-
             </div>
             <div class="col-3 bg-primary text-white p-2 result5">
                 <h5> Potensi Badai: </h5>
@@ -36,10 +35,12 @@
     </div>
     <div class="col p-5 mb-4 bg-light rounded-3">
         <div class="container-fluid py-5">
-            <h1 class="display-5 fw-bold">Cuaca Hari Ini</i></h1>
-            <h2 class="result6"></h2>
-            <div class=" container  p-md-5 p-sm-5 d-flex">
-                <div class="col-md-8 fs-4 result"></div>
+            <div class="d-flex justify-between">
+                <div class="col-5 p-md-5 p-sm-5">
+                    <h1 class="display-5 fw-bold">Cuaca Hari Ini</h1>
+                    <h2 class="result6"></h2>
+                    <div class="result fs-4"></div>
+                </div>
                 <div class="col-md-8 fs-4 result8"></div>
             </div>
             {{-- <button class="btn btn-primary btn-lg" type="button">Example button</button> --}}
@@ -47,13 +48,17 @@
     </div>
     <div class="col p-5 mb-4 bg-light rounded-3">
         <div class="container-fluid py-5">
-            <h1 class="display-5 fw-bold">Prediksi Cuaca Kedepan</h1>
-            <h2 class="result7"></h2>
-            <div class=" container p-md-5 p-sm-5 d-flex">
-                <div class="col-md-8 fs-4 col-sm-8  result3"></div>
-                <div class="col-md-8 fs-4 col-sm-8  result4"></div>
+            <div class="">
+                <div class="col-8 p-md-5 ">
+                    <h1 class="display-5 fw-bold">Prediksi Cuaca Kedepan</h1>
+                    <h2 class="result7"></h2>
+                </div>
+                <div class="container  p-md-5 p-sm-5 d-flex">
+                    <div class="col-md-8 fs-4 col-sm-8  result3"></div>
+                    <div class="col-md-8 fs-4 col-sm-8  result4"></div>
+                </div>
+                {{-- <button class="btn btn-primary btn-lg" type="button">Example button</button> --}}
             </div>
-            {{-- <button class="btn btn-primary btn-lg" type="button">Example button</button> --}}
         </div>
     </div>
     <div class="container d-flex justify-content-center">
@@ -66,9 +71,9 @@
             <div class="mt-2 p-4 text-center">
                 <h6 class="mb-3">Apakah Ramalah Hari Ini Sudah Akurat?</h6>
                 <small class="px-3">Berikan Ulasan</small>
-                <div class="d-flex  justify-content-around">
+                <div class="d-flex justify-content-around">
                     <form id="ulasan">
-                        <div class="d-flex flex-row justify-content-center mt-5  g-2 row ">
+                        <div class="d-flex flex-row justify-content-center mt-5 g-2 row ">
                             <div class="col pb-5">
                                 <input type="checkbox" class="btn-check" value="Akurat" onclick="aktif()"
                                     name="nama_ulasan" id="option1" autocomplete="off" checked>
@@ -82,17 +87,19 @@
                                 <span class="text-danger" id="tidakError"></span>
                             </div>
                         </div>
-                        <div class="dataTemp" id="dataTemp"></div>
-                        <div class="th" id="th"></div>
+                        <div class="p-5 container">
+                            <div class="opsi col" id="opsi"></div>
+                            <div class="datalok" id="datalok"></div>
+                            <div class="dataTemp" id="dataTemp"></div>
+                            <div class="th" id="th"></div>
+                        </div>
                         <div class="pb-5 pb-sm-5">
                             <label hidden for="option1"></label>
-                            <button type="submit" class="btn btn-primary btn-block save-data"
+                            <button type="submit" onclick="getLocation()" class=" btn btn-primary btn-block save-data"
                                 id="tbl1"><span>Send</span></button>
                         </div>
-
                     </form>
                 </div>
-
                 <div class="">
                     <p class="">Developer Tim</p>
                 </div>

@@ -44,6 +44,10 @@ class UlasanModelController extends Controller
     
         
         $data = new UlasanModel();
+
+        $data ->lat = $request->lat;
+
+        $data ->long = $request->long;
       
         $data->nama_ulasan = $request->nama_ulasan;
 
