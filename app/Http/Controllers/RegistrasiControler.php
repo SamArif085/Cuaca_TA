@@ -46,7 +46,7 @@ class RegistrasiControler extends Controller
         // dd($validate);
         User::create($validate);
         // $request->session()->flash('success', 'Registrasi berhasil Lanjut Login');
-        return redirect('/');
+        return redirect('/login');
     }
 
     /**

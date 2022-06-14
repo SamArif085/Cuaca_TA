@@ -15,9 +15,9 @@ return new class extends Migration
     {
         Schema::create('ulasan_models', function (Blueprint $table) {
             $table->id();
-            $table->string('nama_ulasan');
-            $table->float('latitude');
-            $table->float('longitude');
+            $table->string('isi_ulasan');
+            $table->string('nama_kota');
+            $table->foreignId('id_user')->constrained('users');
             $table->timestamps();
         });
     }

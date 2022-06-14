@@ -59,7 +59,7 @@
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="{{ asset('js/lokasi.js') }}"></script>
     <script src="{{ asset('js/app.js') }}"></script>
-
+    <script src="{{ asset('js/apigempa.js') }}"></script>
 
 </body>
 

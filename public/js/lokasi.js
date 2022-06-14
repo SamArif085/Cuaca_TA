@@ -96,6 +96,7 @@ searchButton.addEventListener('click', function () {
                                 <tr><td>Prediksi Cuaca &nbsp</td><td>:</td><td>&nbsp${response.data.params[6].times[8].name}</td></tr></table>`
 
             var badai = response.data.params[5].times[0].celcius;
+            $('#kota').attr('value', inputKeyword2.value);
 
             if (badai > 28) {
                 let badai = document.querySelector('.result5')
@@ -109,5 +110,7 @@ searchButton.addEventListener('click', function () {
     // inputKeyword.value = id;
     // inputKeyword2.value = null;
 })
+
+
 
 

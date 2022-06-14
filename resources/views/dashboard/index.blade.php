@@ -3,7 +3,7 @@
     <div class=" container mr-3 ">
         <div class="row p-md-5 p-sm-5 ">
             <div class="col-3 bg-primary text-white p-2">
-                <h5>Halo {{ auth()->user()->name }}</h5>
+                <h5 id="">Halo {{ auth()->user()->name }}</h5>
             </div>
             <div class="col bg-dark text-white p-2 result2">
             </div>
@@ -76,26 +76,27 @@
                         <div class="d-flex flex-row justify-content-center mt-5 g-2 row ">
                             <div class="col pb-5">
                                 <input type="checkbox" class="btn-check" value="Akurat" onclick="aktif()"
-                                    name="nama_ulasan" id="option1" autocomplete="off" checked>
+                                    name="isi_ulasan" id="option1" autocomplete="off" checked>
                                 <label class="btn btn-success op" for="option1">Akurat</label>
                                 <span class="text-danger" id="akuratError"></span>
                             </div>
                             <div class="col pb-5">
                                 <input type="checkbox" class="btn-check" value="Tidak Akurat" onclick="tidakAktif()"
-                                    name="nama_ulasan" id="option2" autocomplete="off">
+                                    name="isi_ulasan" id="option2" autocomplete="off">
                                 <label class="btn btn-danger op1" for="option2">Tidak</label>
                                 <span class="text-danger" id="tidakError"></span>
                             </div>
                         </div>
                         <div class="p-5 container">
                             <div class="opsi col" id="opsi"></div>
-                            <div class="datalok" id="datalok"></div>
+                            <input hidden type="text" id="id" name="id_user" value="{{ auth()->user()->id }}">
+                            <div class="lokasi" id="lokasi"></div>
                             <div class="dataTemp" id="dataTemp"></div>
                             <div class="th" id="th"></div>
                         </div>
                         <div class="pb-5 pb-sm-5">
                             <label hidden for="option1"></label>
-                            <button type="submit" onclick="getLocation()" class=" btn btn-primary btn-block save-data"
+                            <button type="submit" class=" btn btn-primary btn-block save-data"
                                 id="tbl1"><span>Send</span></button>
                         </div>
                     </form>
@@ -105,5 +106,8 @@
                 </div>
             </div>
         </div>
+        <p>Click the button to get your coordinates.</p>
+
+        <button onclick="getLocation()">Try It</button>
     </div>
 @endsection

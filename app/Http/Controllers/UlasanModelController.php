@@ -45,11 +45,11 @@ class UlasanModelController extends Controller
         
         $data = new UlasanModel();
 
-        $data ->lat = $request->lat;
+        $data ->id_user = $request->id_user;
 
-        $data ->long = $request->long;
+        $data ->nama_kota = $request->nama_kota;
       
-        $data->nama_ulasan = $request->nama_ulasan;
+        $data->isi_ulasan = $request->isi_ulasan;
 
         $data->save();
 
@@ -65,7 +65,7 @@ class UlasanModelController extends Controller
         
         $data = new UlasanModel();
       
-        $data->nama_ulasan = $request->nama_ulasan1;
+        $data->isi_ulasan = $request->isi_ulasan;
         $data->save();
 
        

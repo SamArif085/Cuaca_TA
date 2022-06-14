@@ -4,7 +4,7 @@ $(document).ready(function () {
     $('#Provinsi').on('change', function () {
         var id = $(this).val();
         $('#kota').find('option').not(':first').remove();
-        // $('#sel').attr('value', id);
+
         $.ajax({
             url: '/get-home/' + id,
             type: 'GET',
@@ -51,12 +51,11 @@ function tidakAktif() {
     // $("#tbl2").hide();
 }
 
-
-
+var id = document.getElementById("id").value;
 $(document).ready(function () {
     $('#option1').click(function () {
-        var nama_ulasan = $(this).val();
-
+        var isi_ulasan = $(this).val();
+        var nama_kota = $(inputKeyword2).val();
         $('#ulasan').submit(function (e) {
 
             e.preventDefault();
@@ -72,31 +71,23 @@ $(document).ready(function () {
                 type: "POST",
                 url: "/dashboard/save-data",
                 data: {
-                    nama_ulasan: nama_ulasan,
+                    isi_ulasan: isi_ulasan,
+                    // id_user: id_user,
+                    nama_kota: nama_kota,
+                    id_user: id
                 },
 
                 success: function (response) {
+
                     toastr.success(response.message);
                 }
 
             });
 
-
         });
 
     });
     $('#option2').click(function () {
-        var x = document.getElementById("datalok");
-        if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(showPosition);
-        } else {
-            x.innerHTML = "Geolocation is not supported by this browser.";
-        }
-
-        function showPosition(position) {
-            x.innerHTML = "<div name='lat' value='" + position.coords.latitude + "'>Latitude: " + position.coords.latitude; +"</div>";
-            x.innerHTML += "<div name'long' value='" + position.coords.longitude + "'>Longitude: " + position.coords.longitude; +"</div> ";
-        }
         var nama_ulasan = $(this).val();
         $('#ulasan').submit(function (e) {
             e.preventDefault();
@@ -107,15 +98,13 @@ $(document).ready(function () {
                 }
             });
 
-
             $.ajax({
                 dataType: 'json',
                 type: "POST",
                 url: "/dashboard/save-data",
                 data: {
                     nama_ulasan: nama_ulasan,
-                    long: long,
-                    lat: lat,
+
                 },
 
                 success: function (response) {
@@ -171,9 +160,10 @@ $("#option2").click(function () {
         $(".op1").hide();
 
     }, 1000);
-    let data = document.querySelector('.opsi')
-    data.innerHTML = '<select class="form-select" aria-label="Default select example"><option option selected >Pilih Alasan</option ><option value="Tidak Sesuai dengan cuaca saat ini">Tidak Sesuai dengan cuaca saat ini</option><option value="2">Pada Lokasi Saya tidak sesuai pada prediksi hari ini</option></select>',
+    let data = document.querySelector('.dataTemp1')
+    data.innerHTML = '<h4 class="data1 p-3 mb-3">Proses <i class="fas fa-spinner fa-spin"></i></h4>',
         setTimeout(function () {
+            $(".data1").hide();
             $("#tbl1").Show();
         }, 1000);
 });
@@ -201,22 +191,4 @@ $("#tbl1").click(function () {
             $("#tbl1").hide();
         }, 1000);
 
-});
-
-//Api Gempa
-$(document).ready(function () {
-    fetch("https://cuaca-gempa-rest-api.vercel.app/quake/")
-        .then(response => response.json())
-        .then(response => {
-            let result = document.querySelector('#map')
-            result.innerHTML = `<img src="${response.data.shakemap}"></h2>`
-            let text = document.querySelector('#text')
-            text.innerHTML =
-                `<h5><span> Tanggal : ${response.data.tanggal}</span></h5>
-                        <h5><span> Waktu : ${response.data.jam}</span></h5> 
-                        <h5><span> Kedalaman : ${response.data.kedalaman}</span></h5> 
-                        <h5><span> Wilayah : ${response.data.wilayah}</span></h5> 
-                        <h5><span> Potensi : ${response.data.potensi}</span></h5> 
-                        <h5><span> Dirasakan : ${response.data.dirasakan}</span></h5> `
-        })
 });
