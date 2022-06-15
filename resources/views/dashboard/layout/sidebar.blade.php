@@ -3,14 +3,19 @@
          <ul class="nav flex-column">
              <li class="nav-item">
                  <a class="nav-link" aria-current="page" href="/dashboard">
-                     <span data-feather="home"></span>
-                     Dashboard
+                     <h5 class=" bold"> <i class="fa-solid fa-house"></i>
+                         Dashboard </h5>
                  </a>
              </li>
              <li class="nav-item">
-                 <a class="nav-link" href="/dashboard/gempa">
-                     <span data-feather="file-text"></span>
-                     Gempa
+                 <a class="nav-link" aria-current="page" href="/dashboard/gempa">
+                     <h5 class=" bold"><i class="fa-solid fa-house-crack"></i> Gempa</h5>
+                 </a>
+             </li>
+             <li class="nav-item">
+                 <a class="nav-link" aria-current="page" href="/dashboard/historis">
+                     <h5 class="bold"><i class="fa-solid fa-clock-rotate-left"></i> Histori User
+                     </h5>
                  </a>
              </li>
          </ul>

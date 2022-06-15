@@ -20,6 +20,7 @@
     <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/dashboard/">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
 
+
     <!-- Custom styles for this template -->
     <link href="/css/dashboard.css" rel="stylesheet">
     <link href="{{ asset('css/weather-icons.min.css') }}" rel="stylesheet">
@@ -36,6 +37,7 @@
 
             <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
                 @yield('container1')
+                @yield('container2')
             </main>
         </div>
     </div>

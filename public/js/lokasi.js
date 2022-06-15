@@ -11,9 +11,9 @@ searchButton.addEventListener('click', function () {
             let result = document.querySelector('.result')
 
             result.innerHTML = `<table>
-                                <tr><td>Temperature &nbsp</td><td>:</td><td>&nbsp${response.data.params[5].times[0].celcius}</td></tr>
-                                <tr><td>Kecepatan Angin &nbsp</td><td>:</td><td>&nbsp${response.data.params[8].times[0].kph} km/jam</td></tr>
-                                <tr><td> Kelembapan &nbsp</td><td>:</td><td>&nbsp${response.data.params[0].times[0].value}</td></tr></table>`
+                                <tr><td><h4>Temperature &nbsp</td><td>:</td><td>&nbsp${response.data.params[5].times[0].celcius}<h4></td></tr>
+                                <tr><td><h4>Kecepatan Angin &nbsp</td><td>:</td><td>&nbsp${response.data.params[8].times[0].kph} km/jam<h4></td></tr>
+                                <tr><td><h4>Kelembapan &nbsp</td><td>:</td><td>&nbsp${response.data.params[0].times[0].value}<h4></td></tr></table>`
             let result2 = document.querySelector('.result2')
             let result8 = document.querySelector('.result8')
             var cuaca = response.data.params[6].times[0].code;
@@ -82,18 +82,18 @@ searchButton.addEventListener('click', function () {
             let result3 = document.querySelector('.result3')
 
             result3.innerHTML = `<table> 
-                                <h3 style="margin-bottom: 15px;">Prediksi Lusa </h3>
-                                <tr><td>Temperature &nbsp</td><td>:</td><td>&nbsp${response.data.params[5].times[4].celcius}</td></tr>
-                                <tr><td>Kecepatan Angin &nbsp</td><td>:</td><td>&nbsp${response.data.params[8].times[4].kph}km/jam</td></tr>
-                                <tr><td>Prediksi Cuaca &nbsp</td><td>:</td><td>&nbsp${response.data.params[6].times[4].name}</td></tr></table>`
+                                <h3 style="margin-bottom: 15px;">Prediksi Besok </h3>
+                                <tr><td><h4>Temperature &nbsp</td><td>:</td><td>&nbsp${response.data.params[5].times[4].celcius}</h4></td></tr>
+                                <tr><td><h4>Kecepatan Angin &nbsp</td><td>:</td><td>&nbsp${response.data.params[8].times[4].kph}km/jam</h4></td></tr>
+                                <tr><td><h4>Prediksi Cuaca &nbsp</td><td>:</td><td>&nbsp${response.data.params[6].times[4].name}</h4></td></tr></table>`
 
             let result4 = document.querySelector('.result4')
 
             result4.innerHTML = `<table> 
                                 <h3 style="margin-bottom: 15px;">Prediksi Lusa </h3>
-                                <tr><td>Temperature &nbsp</td><td>:</td><td>&nbsp${response.data.params[5].times[8].celcius}</td></tr>
-                                <tr><td>Kecepatan Angin &nbsp</td><td>:</td><td>&nbsp${response.data.params[8].times[8].kph} km/jam</td></tr>
-                                <tr><td>Prediksi Cuaca &nbsp</td><td>:</td><td>&nbsp${response.data.params[6].times[8].name}</td></tr></table>`
+                                <tr><td><h4>Temperature &nbsp</td><td>:</td><td>&nbsp${response.data.params[5].times[8].celcius}</h4></td></tr>
+                                <tr><td><h4>Kecepatan Angin &nbsp</td><td>:</td><td>&nbsp${response.data.params[8].times[8].kph} km/jam</h4></td></tr>
+                                <tr><td><h4>Prediksi Cuaca &nbsp</td><td>:</td><td>&nbsp${response.data.params[6].times[8].name}</h4></td></tr></table>`
 
             var badai = response.data.params[5].times[0].celcius;
             $('#kota').attr('value', inputKeyword2.value);

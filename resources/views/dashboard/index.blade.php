@@ -62,7 +62,7 @@
         </div>
     </div>
     <div class="container d-flex justify-content-center">
-        <div class="card mb-5 mt-3" id="ul">
+        <div class="col-8 p-5 mb-4 bg-light rounded-3" id="ul">
             <div class="d-flex flex-row justify-content-between p-3 adiv text-white">
                 <i class="fas fa-chevron-left"></i>
                 <span class="pb-3">feedback</span>
@@ -106,8 +106,6 @@
                 </div>
             </div>
         </div>
-        <p>Click the button to get your coordinates.</p>
 
-        <button onclick="getLocation()">Try It</button>
     </div>
 @endsection

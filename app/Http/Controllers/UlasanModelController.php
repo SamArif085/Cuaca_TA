@@ -65,7 +65,12 @@ class UlasanModelController extends Controller
         
         $data = new UlasanModel();
       
+        $data ->id_user = $request->id_user;
+
+        $data ->nama_kota = $request->nama_kota;
+      
         $data->isi_ulasan = $request->isi_ulasan;
+        
         $data->save();
 
        

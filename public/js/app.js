@@ -72,7 +72,6 @@ $(document).ready(function () {
                 url: "/dashboard/save-data",
                 data: {
                     isi_ulasan: isi_ulasan,
-                    // id_user: id_user,
                     nama_kota: nama_kota,
                     id_user: id
                 },
@@ -88,7 +87,10 @@ $(document).ready(function () {
 
     });
     $('#option2').click(function () {
-        var nama_ulasan = $(this).val();
+        var isi_ulasan = $(this).val();
+        var nama_kota = $(inputKeyword2).val();
+        console.log(id);
+
         $('#ulasan').submit(function (e) {
             e.preventDefault();
             // nama_ulasan = $('input[name=nama_ulasan]:checked').val();
@@ -101,9 +103,11 @@ $(document).ready(function () {
             $.ajax({
                 dataType: 'json',
                 type: "POST",
-                url: "/dashboard/save-data",
+                url: "/dashboard/save-data1",
                 data: {
-                    nama_ulasan: nama_ulasan,
+                    isi_ulasan: isi_ulasan,
+                    nama_kota: nama_kota,
+                    id_user: id
 
                 },
 
@@ -158,35 +162,18 @@ $("#option2").click(function () {
     setTimeout(function () {
         $(".op").hide();
         $(".op1").hide();
-
     }, 1000);
-    let data = document.querySelector('.dataTemp1')
+    let data = document.querySelector('.dataTemp')
     data.innerHTML = '<h4 class="data1 p-3 mb-3">Proses <i class="fas fa-spinner fa-spin"></i></h4>',
         setTimeout(function () {
             $(".data1").hide();
-            $("#tbl1").Show();
+            $("#tbl1").show();
         }, 1000);
 });
 
-
-
-
-// $("#option2").click(function () {
-//     setTimeout(function () {
-//         $(".op").hide();
-//         $(".op1").hide();
-//     }, 1000);
-//     let data = document.querySelector('.dataTemp')
-//     data.innerHTML = '<h4 class="data1 p-3 mb-3">Proses <i class="fas fa-spinner fa-spin"></i></h4>',
-//         setTimeout(function () {
-//             $(".data1").hide();
-//             $("#tbl1").show();
-//         }, 1000);
-// });
-
 $("#tbl1").click(function () {
     let data1 = document.querySelector('.th')
-    data1.innerHTML = '<h5 class="data1 mb-3">Terima Kasih</h5><h5>Telah memberikan ulasan anda</h5>',
+    data1.innerHTML = '<h5 class="mb-3">Terima Kasih</h5><h5>Telah memberikan ulasan anda</h5>',
         setTimeout(function () {
             $("#tbl1").hide();
         }, 1000);
