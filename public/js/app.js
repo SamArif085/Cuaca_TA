@@ -32,7 +32,7 @@ $(document).ready(function () {
 })
 
 //menampilkan ulasan
-
+$("#ulang").hide();
 $("#ul").hide();
 $(".src").click(function () {
     $("#ul").show();
@@ -176,6 +176,19 @@ $("#tbl1").click(function () {
     data1.innerHTML = '<h5 class="mb-3">Terima Kasih</h5><h5>Telah memberikan ulasan anda</h5>',
         setTimeout(function () {
             $("#tbl1").hide();
+            // $("#ul").hide();
+            // $(".th").hide();
+            // $(".ulang").show();
         }, 1000);
 
 });
+
+// $("#ulang").click(function () {
+
+//     $("#ulang").hide();
+//     $(".op").show();
+//     $(".op1").show();
+
+
+// });
+

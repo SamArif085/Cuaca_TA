@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\GempaController;
+use App\Http\Controllers\HistorisController;
 use App\Http\Controllers\HomeAwalController;
 use App\Http\Controllers\KotaController;
 use App\Http\Controllers\LoginControler;
@@ -44,6 +45,7 @@ Route::get('/get-home/{id}', [HomeAwalController::class, 'Kota']);
 Route::get('/dashboard', [ProvinsiController::class, 'index'])->middleware('auth');
 Route::get('/dashboard/gempa', [GempaController::class, 'index'])->middleware('auth');
 Route::get('/get-kota/{id}', [ProvinsiController::class, 'Kota'])->middleware('auth');
+Route::get('/dashboard/historis', [HistorisController::class, 'index'])->middleware('auth');
 
 //tambahdata
 // Route::get('/dashboard/save-data',[UlasanModelController::class, 'store']);

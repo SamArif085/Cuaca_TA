@@ -18,7 +18,9 @@
                 <select class="form-select form-select-sm input-keyword" id="Provinsi">
                     <option value="0" selected>Pilih Provinsi</option>
                     @foreach ($Provinsi['data'] as $p)
-                        <option value="{{ $p->nama_provinsi }}">{{ $p->nama_provinsi }}</option>
+                        <option value="{{ $p->nama_provinsi }}">
+                            <h4>{{ $p->nama_provinsi }}</h4>
+                        </option>
                     @endforeach
                 </select>
             </div>
@@ -69,8 +71,8 @@
                 <i class="fas fa-times"></i>
             </div>
             <div class="mt-2 p-4 text-center">
-                <h6 class="mb-3">Apakah Ramalah Hari Ini Sudah Akurat?</h6>
-                <small class="px-3">Berikan Ulasan</small>
+                <h4 class="mb-3">Apakah Ramalah Hari Ini Sudah Akurat?</h4>
+                <h5 class="px-3">Berikan Ulasan</h5>
                 <div class="d-flex justify-content-around">
                     <form id="ulasan">
                         <div class="d-flex flex-row justify-content-center mt-5 g-2 row ">
@@ -90,9 +92,9 @@
                         <div class="p-5 container">
                             <div class="opsi col" id="opsi"></div>
                             <input hidden type="text" id="id" name="id_user" value="{{ auth()->user()->id }}">
-                            <div class="lokasi" id="lokasi"></div>
                             <div class="dataTemp" id="dataTemp"></div>
                             <div class="th" id="th"></div>
+                            {{-- <div id="ulang" class="ulang btn btn-success">Beri Ulasan lagi</div> --}}
                         </div>
                         <div class="pb-5 pb-sm-5">
                             <label hidden for="option1"></label>
@@ -101,8 +103,9 @@
                         </div>
                     </form>
                 </div>
-                <div class="">
-                    <p class="">Developer Tim</p>
+                <div class=" position-relative">
+                    <h6 class=" ">Developer Tim</h6>
+                    <h6 class=""> @2022</h6>
                 </div>
             </div>
         </div>

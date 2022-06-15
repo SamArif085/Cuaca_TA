@@ -6,12 +6,12 @@ $(document).ready(function () {
             let result = document.querySelector('#map')
             result.innerHTML = `<img src="${response.data.shakemap}"></h2>`
             let text = document.querySelector('#text')
-            text.innerHTML =
-                `<h5><span> Tanggal : ${response.data.tanggal}</span></h5>
-                        <h5><span> Waktu : ${response.data.jam}</span></h5>
-                        <h5><span> Kedalaman : ${response.data.kedalaman}</span></h5>
-                        <h5><span> Wilayah : ${response.data.wilayah}</span></h5>
-                        <h5><span> Potensi : ${response.data.potensi}</span></h5>
-                        <h5><span> Dirasakan : ${response.data.dirasakan}</span></h5> `
+            text.innerHTML = `<table>
+                <tr><td><h4>Tanggal &nbsp</h4></td><td><h4>:</h4></td><td><h4>&nbsp${response.data.tanggal}</h4></td></tr>
+                <tr><td><h4>Waktu &nbsp</h4></td><td><h4>:</h4></td><td><h4>&nbsp${response.data.jam}</h4></td></tr>
+                <tr><td><h4>Kedalaman &nbsp</h4></td><td><h4>:</h4></td><td><h4>&nbsp${response.data.kedalaman}</h4></td></tr>
+                <tr><td><h4>Wilayah &nbsp</h4></td><td><h4>:</h4></td><td><h4>&nbsp${response.data.wilayah}</h4></td></tr>
+                <tr><td><h4>Potensi &nbsp</h4></td><td><h4>:</h4></td><td><h4>&nbsp${response.data.potensi}</h4></td></tr>
+                <tr><td><h4>Dirasakan &nbsp</h4></td><td><h4>:</h4></td><td><h4>&nbsp${response.data.dirasakan}</h4></td></tr></table>`
         })
 });
