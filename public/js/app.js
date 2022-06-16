@@ -1,10 +1,10 @@
 
 //Option Provinsi & Kota
 $(document).ready(function () {
+
     $('#Provinsi').on('change', function () {
         var id = $(this).val();
         $('#kota').find('option').not(':first').remove();
-
         $.ajax({
             url: '/get-home/' + id,
             type: 'GET',
@@ -126,23 +126,6 @@ $(document).ready(function () {
 
 });
 
-toastr.options = {
-    "closeButton": false,
-    "debug": false,
-    "newestOnTop": false,
-    "progressBar": false,
-    "positionClass": "toast-bottom-center",
-    "preventDuplicates": false,
-    "onclick": null,
-    "showDuration": "300",
-    "hideDuration": "1000",
-    "timeOut": "5000",
-    "extendedTimeOut": "1000",
-    "showEasing": "swing",
-    "hideEasing": "linear",
-    "showMethod": "fadeIn",
-    "hideMethod": "fadeOut"
-}
 
 
 $("#option1").click(function () {
