@@ -31,7 +31,7 @@ public function Kota($kotaid =0)
 
     $isikota['data'] = DB::table('provinsi')
             ->join('kota', 'provinsi.id', '=', 'kota.id_provinsi')->where('nama_provinsi',$kotaid)->get();
-l
+
    
   
     return response()->json($isikota);

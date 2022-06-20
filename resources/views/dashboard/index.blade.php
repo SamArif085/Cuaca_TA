@@ -25,14 +25,13 @@
                 </select>
             </div>
             <div class="col-2">
-                <select class="form-select form-select-sm input-keyword2" name="nama_provinsi" id="kota">
+                <select class="form-select form-select-sm input-keyword2 src" name="nama_provinsi" id="kota">
                     <option value='0' selected>Pilih</option>
                 </select>
             </div>
-            <div class="col-1">
-                <button id="button-addon2" type="button" class="btn btn-primary src"><span
-                        data-feather="search"></span></button>
-            </div>
+            {{-- <div class="col-1">
+                <button type="button" class="btn btn-primary 9"><span data-feather="search"></span></button>
+            </div> --}}
         </div>
     </div>
     <div class="col p-5 mb-4 bg-light rounded-3">
@@ -93,8 +92,9 @@
                             <div class="opsi col" id="opsi"></div>
                             <input hidden type="text" id="id" name="id_user" value="{{ auth()->user()->id }}">
                             <div class="dataTemp" id="dataTemp"></div>
+                            <div id="demo"></div>
                             <div class="th" id="th"></div>
-                            <div id="ulang" class="ulang btn btn-success">Beri Ulasan lagi</div>
+                            {{-- <div id="ulang" class="ulang btn btn-success">Beri Ulasan lagi</div> --}}
                         </div>
                         <div class="pb-5 pb-sm-5">
                             <label hidden for="option1"></label>

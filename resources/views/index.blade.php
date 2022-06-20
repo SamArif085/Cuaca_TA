@@ -18,7 +18,7 @@
         <div class=" row p-md-5 p-sm-5 ">
             <div class="col-2">
                 <select class="form-select form-select-sm input-keyword" id="Provinsi">
-                    <option value="0" selected id="sel">Pilih Provinsi</option>
+                    <option value="0" type="button" selected id="sel">Pilih Provinsi</option>
                     @foreach ($Provinsi['data'] as $p)
                         <option value="{{ $p->nama_provinsi }}">{{ $p->nama_provinsi }}</option>
                     @endforeach
@@ -29,10 +29,10 @@
                     <option value='0' id="sel1">Pilih</option>
                 </select>
             </div>
-            <div class="col-1">
+            {{-- <div class="col-1">
                 <button id="button-addon2" type="button" class="btn btn-primary"><span
                         data-feather="search"></span></button>
-            </div>
+            </div> --}}
         </div>
     </div>
     <div class="col p-5 mb-4 bg-light rounded-3">
@@ -77,8 +77,8 @@
                     <form id="ulasan">
                         <div class="d-flex flex-row justify-content-center mt-5  g-2 row ">
                             <div class="col pb-5">
-                                <input type="checkbox" class="btn-check" value="Akurat" onclick="aktif()"
-                                    name="nama_ulasan" id="option1" autocomplete="off" checked>
+                                <input type="checkbox" class="btn-check" value="Akurat" onclick="aktif()" name="nama_ulasan"
+                                    id="option1" autocomplete="off" checked>
                                 <label class="btn btn-success op" for="option1">Akurat</label>
                                 <span class="text-danger" id="akuratError"></span>
                             </div>

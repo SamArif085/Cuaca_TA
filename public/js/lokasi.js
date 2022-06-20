@@ -1,9 +1,9 @@
-var searchButton = document.querySelector('#button-addon2');
+// var searchButton = document.querySelector('#button-addon2');
 var inputKeyword = document.querySelector('.input-keyword');
 var inputKeyword2 = document.querySelector('.input-keyword2');
 
 //API Cuaca
-searchButton.addEventListener('click', function () {
+inputKeyword2.addEventListener('click', function () {
 
     fetch("https://cuaca-gempa-rest-api.vercel.app/weather/" + inputKeyword.value + "/" + inputKeyword2.value)
         .then(response => response.json())
