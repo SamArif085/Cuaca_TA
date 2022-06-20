@@ -77,8 +77,8 @@
                     <form id="ulasan">
                         <div class="d-flex flex-row justify-content-center mt-5 g-2 row ">
                             <div class="col pb-5">
-                                <input type="checkbox" class="btn-check" value="Akurat" onclick="aktif()"
-                                    name="isi_ulasan" id="option1" autocomplete="off" checked>
+                                <input type="checkbox" class="btn-check" value="Akurat" onclick="aktif()" name="isi_ulasan"
+                                    id="option1" autocomplete="off" checked>
                                 <label class="btn btn-success op" for="option1">Akurat</label>
                                 <span class="text-danger" id="akuratError"></span>
                             </div>
@@ -94,7 +94,7 @@
                             <input hidden type="text" id="id" name="id_user" value="{{ auth()->user()->id }}">
                             <div class="dataTemp" id="dataTemp"></div>
                             <div class="th" id="th"></div>
-                            {{-- <div id="ulang" class="ulang btn btn-success">Beri Ulasan lagi</div> --}}
+                            <div id="ulang" class="ulang btn btn-success">Beri Ulasan lagi</div>
                         </div>
                         <div class="pb-5 pb-sm-5">
                             <label hidden for="option1"></label>

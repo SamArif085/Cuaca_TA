@@ -160,18 +160,18 @@ $("#tbl1").click(function () {
         setTimeout(function () {
             $("#tbl1").hide();
             // $("#ul").hide();
-            // $(".th").hide();
-            // $(".ulang").show();
+            $(".th").hide();
+            $(".ulang").show();
         }, 1000);
 
 });
 
-// $("#ulang").click(function () {
+$("#ulang").click(function () {
 
-//     $("#ulang").hide();
-//     $(".op").show();
-//     $(".op1").show();
+    $("#ulang").hide();
+    $(".op").show();
+    $(".op1").show();
 
 
-// });
+});
 
