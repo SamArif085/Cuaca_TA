@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\UlasanModel;
+use Illuminate\Cache\RateLimiting\Limit;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\DB;
@@ -18,9 +19,7 @@ class HistorisController extends Controller
     public function index()
     {
           $Historis = DB::table('ulasan_models')->where('id_user', Auth::user()->id)->get();
-          
-          
-        
+  
         return view('dashboard.historis.index', compact('Historis'));
     }
 
@@ -53,7 +52,7 @@ class HistorisController extends Controller
      */
     public function show($id)
     {
-        //
+        
     }
 
     /**

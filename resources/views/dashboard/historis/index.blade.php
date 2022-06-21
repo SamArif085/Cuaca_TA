@@ -9,6 +9,7 @@
                         <th>No</th>
                         <th>Isi Ulasan</th>
                         <th>Nama Kota</th>
+                        <th>Tanggal dan Waktu</th>
                     </tr>
                 </thead>
 
@@ -21,10 +22,18 @@
                             <td>{{ $no++ }}</td>
                             <td>{{ $h->isi_ulasan }}</td>
                             <td>{{ $h->nama_kota }}</td>
+                            <td>{{ $h->created_at }}</td>
                         </tr>
                     @endforeach
                 </tbody>
 
+                <div>
+                    <h1> halo
+
+                    </h1>
+
+
+                </div>
             </table>
         </div>
     </div>

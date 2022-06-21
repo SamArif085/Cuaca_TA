@@ -3,10 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Models\KotaModel;
+use App\Models\UlasanModel;
 use Illuminate\Http\Request;
 use App\Models\ProvinsiModel;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 
 class ProvinsiController extends Controller
 {
@@ -18,9 +20,10 @@ class ProvinsiController extends Controller
     public function index()
     {
         $Provinsi['data'] = ProvinsiModel::orderby('nama_provinsi', 'asc')->get();
+
+        
         return view('dashboard.index', compact('Provinsi'));
 
-      
     } 
 
      
@@ -36,6 +39,9 @@ public function Kota($kotaid =0)
   
     return response()->json($isikota);
 }
+
+
+
     /**
      * Show the form for creating a new resource.
      *
