@@ -15,8 +15,8 @@ return new class extends Migration
     {
         Schema::create('ulasan_models', function (Blueprint $table) {
             $table->id();
-            $table->string('isi_ulasan');
-            $table->string('nama_kota');
+            $table->string('isi_ulasan')->nullable();
+            $table->string('nama_kota')->nullable();
             $table->foreignId('id_user')->constrained('users');
             $table->timestamps();
         });

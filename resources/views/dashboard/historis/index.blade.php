@@ -27,13 +27,7 @@
                     @endforeach
                 </tbody>
 
-                <div>
-                    <h1> halo
-
-                    </h1>
-
-
-                </div>
+             
             </table>
         </div>
     </div>

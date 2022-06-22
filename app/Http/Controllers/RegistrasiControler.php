@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\RegisterModel;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Hash;
 use App\Models\User;
+use App\Models\UlasanModel;
+use Illuminate\Http\Request;
+use App\Models\RegisterModel;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 
 class RegistrasiControler extends Controller
 {
@@ -45,8 +47,13 @@ class RegistrasiControler extends Controller
         $validate['password'] = Hash::make($validate['password']);
         // dd($validate);
         User::create($validate);
+        
         // $request->session()->flash('success', 'Registrasi berhasil Lanjut Login');
         return redirect('/login');
+        $newUserId = DB::table('users')->latest()->first();
+        UlasanModel::create([
+            'id_user' => $newUserId->id,
+        ]);
     }
 
     /**

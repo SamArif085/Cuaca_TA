@@ -61,6 +61,9 @@
                 {{-- <button class="btn btn-primary btn-lg" type="button">Example button</button> --}}
             </div>
         </div>
+        <div>
+            <input id="tem" value="{{ $id->created_at }}">
+        </div>
     </div>
     <div class="container d-flex justify-content-center">
         <div class="col-8 p-5 mb-4 bg-light rounded-3" id="ul">

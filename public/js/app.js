@@ -192,50 +192,50 @@ function gimmeYesterday(toAdd) {
     gimmeYesterday(1);
 }
 
-// $(document).ready(function () {
+$(document).ready(function () {
 
-//     var tomorrow = new Date("2022-06-21 13:04:12");
-//     tomorrow.setDate(tomorrow.getDate() + 1);
-
-
-//     // Mengatur waktu akhir perhitungan mundur
-//     var countDownDate = new Date("2022-06-21 13:04:12").getTime() + 1;
-
-//     // Memperbarui hitungan mundur setiap 1 detik
-//     var x = setInterval(function () {
-
-//         // Untuk mendapatkan tanggal dan waktu hari ini
-//         var now = new Date().getTime();
-
-//         // Temukan jarak antara sekarang dan tanggal hitung mundur
-//         var distance = tomorrow - now;
-
-//         // Perhitungan waktu untuk hari, jam, menit dan detik
-//         var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-//         var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-//         var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-//         var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-//         // Keluarkan hasil dalam elemen dengan id = "demo"
-//         document.querySelector("#demo").innerHTML = "<div class='bold pb-4'>" + "<h4>" + days + "d " + hours + "h "
-//             + minutes + "m " + seconds + "s " + "</h4>" + "</div>";
-
-//         // Jika hitungan mundur selesai, tulis beberapa teks
-//         if (distance < 0) {
-//             clearInterval(x);
-//             setTimeout(function () {
-//                 $(".op").show();
-//                 $(".op1").show();
-//                 $(".th").hide();
-//             }, 1000);
-//         } else {
-//             let data1 = document.querySelector('.th')
-//             data1.innerHTML = '<h5 class="mb-3">Terima Kasih</h5><h5>Telah memberikan ulasan anda</h5>',
-//                 $(".op").hide();
-//             $(".op1").hide();
-//             $(".th").show();
-//         }
-//     }, 1000);
+    var tomorrow = new Date($('#tem').val());
+    tomorrow.setDate(tomorrow.getDate() + 1);
 
 
-// });
+    // Mengatur waktu akhir perhitungan mundur
+    var countDownDate = new Date("2022-06-21 13:04:12").getTime() + 1;
+
+    // Memperbarui hitungan mundur setiap 1 detik
+    var x = setInterval(function () {
+
+        // Untuk mendapatkan tanggal dan waktu hari ini
+        var now = new Date().getTime();
+
+        // Temukan jarak antara sekarang dan tanggal hitung mundur
+        var distance = tomorrow - now;
+
+        // Perhitungan waktu untuk hari, jam, menit dan detik
+        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        // Keluarkan hasil dalam elemen dengan id = "demo"
+        document.querySelector("#demo").innerHTML = "<div class='bold pb-4'>" + "<h4>" + days + "d " + hours + "h "
+            + minutes + "m " + seconds + "s " + "</h4>" + "</div>";
+
+        // Jika hitungan mundur selesai, tulis beberapa teks
+        if (distance < 0) {
+            clearInterval(x);
+            setTimeout(function () {
+                $(".op").show();
+                $(".op1").show();
+                $(".th").hide();
+            }, 1000);
+        } else {
+            let data1 = document.querySelector('.th')
+            data1.innerHTML = '<h5 class="mb-3">Terima Kasih</h5><h5>Telah memberikan ulasan anda</h5>',
+                $(".op").hide();
+            $(".op1").hide();
+            $(".th").show();
+        }
+    }, 1000);
+
+
+})

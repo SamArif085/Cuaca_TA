@@ -19,7 +19,7 @@ class HistorisController extends Controller
     public function index()
     {
           $Historis = DB::table('ulasan_models')->where('id_user', Auth::user()->id)->get();
-  
+      
         return view('dashboard.historis.index', compact('Historis'));
     }
 
