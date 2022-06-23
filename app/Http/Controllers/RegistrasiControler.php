@@ -50,10 +50,10 @@ class RegistrasiControler extends Controller
         
         // $request->session()->flash('success', 'Registrasi berhasil Lanjut Login');
         return redirect('/login');
-        $newUserId = DB::table('users')->latest()->first();
-        UlasanModel::create([
-            'id_user' => $newUserId->id,
-        ]);
+        // $newUserId = DB::table('users')->latest()->first();
+        // UlasanModel::create([
+        //     'id_user' => $newUserId->id,
+        // ]);
     }
 
     /**
