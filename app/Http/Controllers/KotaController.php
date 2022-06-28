@@ -8,25 +8,8 @@ use App\Http\Controllers\Controller;
 
 class KotaController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    // public function  getkota(request $request)
-    // {
-    //     if($request->ajax()){
- 
-    //     }
-    //         $nama_provinsi = $request->nama_provinsi;
-    //         dd($nama_provinsi);
-    //         $Kota = KotaModel::where('id_provinsi', $nama_provinsi)->get();
-    //         foreach ($Kota as $p) {
-    //           echo "<option value='$p->nama_daerah'>$p->nama_daerah</option>";
-    //         }
-    
-    // }
-public function index()
+
+    public function index()
     {
         $kota = KotaModel::all();
         return view('kota.index', compact('kota'));

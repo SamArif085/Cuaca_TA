@@ -22,8 +22,6 @@ class ProvinsiController extends Controller
         $Provinsi['data'] = ProvinsiModel::orderby('nama_provinsi', 'asc')->get();
         return view('dashboard.index', compact('Provinsi'));
         
-        
-        
         // $id = UlasanModel::query()->where('id_user',auth()->user()->id)->orderby('created_at','DESC')->get();
         // $id = DB::table('ulasan_models')->latest()->first();
                  

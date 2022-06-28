@@ -45,11 +45,13 @@ class RegistrasiControler extends Controller
             'password' => 'required|min:5|max:255'
         ]);
         $validate['password'] = Hash::make($validate['password']);
-        // dd($validate);
+      
         User::create($validate);
+        return redirect('/login');
+
         
         // $request->session()->flash('success', 'Registrasi berhasil Lanjut Login');
-        return redirect('/login');
+  
         // $newUserId = DB::table('users')->latest()->first();
         // UlasanModel::create([
         //     'id_user' => $newUserId->id,
