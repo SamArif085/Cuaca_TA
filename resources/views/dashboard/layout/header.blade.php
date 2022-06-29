@@ -47,20 +47,12 @@
     </div>
 </header> --}}
 <header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
-    <div class=" container-fluid position-relative ">
+    <div class="container-fluid">
         <img src="{{ asset('img/logo2.png') }}" class="rounded " alt="..." width="150" height="auto">
-    </div>
-
-    <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse"
-        data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="navbar-nav mx-2">
-        <div class="nav-item text-nowrap position-relative">
-            <form action="/logout" method="POST">
-                @csrf
-                <button class=" btn btn-danger px-3 " href="#">Logout <span data-feather="log-out"></button>
-            </form>
-        </div>
+        <button class="navbar-toggler bg-success position-absolute d-md-none collapsed" type="button"
+            data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
     </div>
 </header>

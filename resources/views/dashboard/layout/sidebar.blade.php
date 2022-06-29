@@ -20,4 +20,10 @@
              </li>
          </ul>
      </div>
+     <div class="nav-item ">
+         <form class="nav-link" action="/logout" method="POST">
+             @csrf
+             <button class=" btn btn-danger px-3 " href="#">Logout <span data-feather="log-out"></button>
+         </form>
+     </div>
  </nav>
