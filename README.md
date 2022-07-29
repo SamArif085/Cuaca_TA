@@ -1,2 +1,20 @@
-# Cuaca_TA
- Tugas TA website Cuaca
+<div align="center">
+    <a href="https://php.net">
+        <img
+            alt="PHP"
+            src="https://www.php.net/images/logos/new-php-logo.svg"
+            width="150">
+    </a>
+   <a href="https://laravel.com" target="_blank">
+        <img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="250">
+   </a>
+   <a href="https://cdnjs.com/libraries/simple-icons">
+        <img src="https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/simpleicons.svg#gh-light-mode-only" alt="Simple Icons" width=70><img src="https://raw.githubusercontent.com/simple-icons/simple-icons/develop/assets/readme/simpleicons-white.svg#gh-dark-mode-only" alt="Simple Icons" width="150">
+   </a>
+</div>
+
+
+## Website Informasi Cuaca dan Gempa (SISAPA)
+Aplikasi ini di buat untuk Tugas Akhir Mata Kuliah 
+
+Untuk Preview Website dari Informasi Cuaca dan Gempa (SISAPA) bisa lihat pada link : https://sisapa.webakb.com/
