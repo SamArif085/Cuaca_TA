@@ -29,4 +29,6 @@ Proses pembuatan website ini , saya menggunakan Framework Laravel dengan tambaha
 Javascript digunakan untuk mengakses data JSON yang diperoleh dari database BMKG dengan menggunakan API yang sudah dikelola untuk ditampilkan pada antarmuka website.<br>
 
 ### Preview Website
-Untuk Preview Website Informasi Cuaca dan Gempa (SISAPA) bisa lihat pada link : https://sisapa.webakb.com/
+Untuk Preview Website Informasi Cuaca dan Gempa (SISAPA) bisa lihat pada link : https://sisapa.webakb.com <br>
+Username : sam123 <br>
+Pass : 12345
