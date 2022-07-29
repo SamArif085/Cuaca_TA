@@ -27,6 +27,7 @@ Saya mengambil refrensi API yang dibuat oleh Bapak Renova Muhamad Reza (https://
 ### Development Website
 Proses pembuatan website ini , saya menggunakan Framework Laravel dengan tambahan Javascript.<br>
 Javascript digunakan untuk mengakses data JSON yang diperoleh dari database BMKG dengan menggunakan API yang sudah dikelola untuk ditampilkan pada antarmuka website.<br>
+Interface Website dibuat dengan menggunakan Framework Boostrap 5.
 
 ### Preview Website
 Untuk Preview Website Informasi Cuaca dan Gempa (SISAPA) bisa lihat pada link : https://sisapa.webakb.com <br>
