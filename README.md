@@ -19,7 +19,7 @@ Aplikasi ini dibuat untuk Tugas Akhir Mata Kuliah.<br>
 Informasi Cuaca bisa dilihat sampai 2 hari kedepan dan informasi Gempa terkini.
 
 ### Pengambilan Data Cuaca dan Gempa
-Data Informasi Cuaca dan Gempa diambil dari database BMKG (https://www.bmkg.go.id) yang diakses menggunakan API
+Data Informasi Cuaca dan Gempa diambil dari database BMKG (https://www.bmkg.go.id) yang diakses menggunakan API.
 
 ### Penggunaan API
 Saya mengambil refrensi API yang dibuat oleh Bapak Renova Muhamad Reza (https://github.com/renomureza/cuaca-gempa-rest-api) dan diadopsi pada website ini.
