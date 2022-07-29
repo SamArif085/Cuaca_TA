@@ -15,6 +15,17 @@
 
 
 ## Website Informasi Cuaca dan Gempa (SISAPA)
-Aplikasi ini di buat untuk Tugas Akhir Mata Kuliah 
+Aplikasi ini dibuat untuk Tugas Akhir Mata Kuliah.
 
-Untuk Preview Website dari Informasi Cuaca dan Gempa (SISAPA) bisa lihat pada link : https://sisapa.webakb.com/
+### Pengambilan Data Cuaca dan Gempa
+Data Informasi Cuaca dan Gempa diambil dari database BMKG (https://www.bmkg.go.id) yang diakses menggunakan API
+
+### Penggunaan API
+Saya mengambil refrensi API yang dibuat oleh Bapak Renova Muhamad Reza (https://github.com/renomureza/cuaca-gempa-rest-api) dan diadopsi pada website ini.
+
+### Development Website
+Proses pembuatan website ini , saya menggunakan Framework Laravel dengan tambahan Javascript.<br>
+Javascript digunakan untuk mengakses data JSON yang diperoleh dari database BMKG dengan menggunakan API yang sudah dikelola untuk ditampilkan pada antarmuka website.<br>
+
+### Preview Website
+Untuk Preview Website Informasi Cuaca dan Gempa (SISAPA) bisa lihat pada link : https://sisapa.webakb.com/
